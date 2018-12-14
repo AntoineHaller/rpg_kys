@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace Rpg_Kys
 {
-    class Player
+    class Player : Character
     {
-        public string Name;
+        protected int Taille;
+        protected int Poids;
+        protected int Charisme;
+        protected int Inteligence;
+
+        public Player(string n) : base(n)
+        {
+        }
+        
 
         public void Move_player()
         {

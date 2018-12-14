@@ -74,7 +74,7 @@ namespace Rpg_Kys
 
         public void StartGame()
         {
-            //TODO Faire le StartGame
+            Game();
         }
 
         public void Load()
