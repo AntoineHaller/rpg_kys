@@ -8,5 +8,6 @@ namespace Rpg_Kys
 {
     class Map
     {
+        ah
     }
 }
