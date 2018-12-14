@@ -11,7 +11,7 @@ namespace Rpg_Kys
         public Menu()
         {
             PrintMenu();
-            int choix = AskChoice(1, 3);
+            int choix = AskChoice(1, 4);
             switch (choix)
             {
                 case 1:
@@ -46,13 +46,13 @@ namespace Rpg_Kys
             Console.WriteLine("La vie en entreprise n'est pas toujours radieuse. Heureusement vous avez trouvé la solution à votre malheur.");
             Console.WriteLine("Votre but est d'atteindre le dernier étage de la tour dans laquelle vous travaillez.");
             Console.WriteLine("Cependant vous devez faire attention, de nombreux obstacles vous barreront la route.\n");
-            
+
             Console.WriteLine("1 - Nouvelle partie");
             Console.WriteLine("2 - Charger une partie");
             Console.WriteLine("3 - A propos");
             Console.WriteLine("4 - Quitter");
-            
-            
+
+
         }
 
         public static int AskChoice(int min, int max)
