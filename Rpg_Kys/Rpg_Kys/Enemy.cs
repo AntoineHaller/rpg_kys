@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Rpg_Kys
 {
-    class Enemy
+    class Enemy : Character
     {
+        public string Description;
+
+        public Enemy(string n) : base(n)
+        {
+        }
     }
 }
