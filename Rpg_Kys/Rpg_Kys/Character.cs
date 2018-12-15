@@ -30,10 +30,12 @@ namespace Rpg_Kys
         {
             if (Hp > 0)
             {
-                return Hp = Hp - Attack();
+                Console.WriteLine("Dégats effectués: " + (Attack() - Defense));
+                return Hp = Hp - (Attack() - Defense);
             }
             else
             {
+                Console.WriteLine("Personnage décédé");
                 return Hp;
             }
 

@@ -13,5 +13,10 @@ namespace Rpg_Kys
         public Enemy(string n) : base(n)
         {
         }
+
+        public override int Damage()
+        {
+            return base.Damage();
+        }
     }
 }
