@@ -63,6 +63,10 @@ Thread.Sleep(4 sec);
 Console.WriteLine("Maintenant");
 
 ********************************************* Les objets: 
+Type d'objet: Potions (heal, attack, defense), Armes, ... ?
+
 Liste d'objets : 
 BETA: "Rareté : de 1 à 5 (relié à une couleur) donc il faudra faire un switch je sais pas ou pour changer les dégats en fonction
 de la couleur ^^" 
+
+
