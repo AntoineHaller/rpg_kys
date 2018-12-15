@@ -20,5 +20,23 @@ namespace Rpg_Kys
         {
             Name = n;
         }
+
+        public virtual int Attack()
+        {
+            return 2;
+        }
+
+        public virtual int Damage()
+        {
+            if (Hp > 0)
+            {
+                return Hp = Hp - Attack();
+            }
+            else
+            {
+                return Hp;
+            }
+
+        }
     }
 }

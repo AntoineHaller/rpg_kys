@@ -16,5 +16,15 @@ namespace Rpg_Kys
             Force = 5;
             Description = "";
         }
+
+        public int Attack_Bot_Medium()
+        {
+            return Force;
+        }
+
+        public override int Attack()
+        {
+            return Attack_Bot_Medium();
+        }
     }
 }

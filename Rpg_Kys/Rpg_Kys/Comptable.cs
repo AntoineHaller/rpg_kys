@@ -19,5 +19,15 @@ namespace Rpg_Kys
             Vitesse = 7;
             Force = 7;
         }
+
+        public int Attack_Player_Comptable()
+        {
+            return Force;
+        }
+
+        public override int Attack()
+        {
+            return Attack_Player_Comptable();
+        }
     }
 }

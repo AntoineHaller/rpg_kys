@@ -19,5 +19,16 @@ namespace Rpg_Kys
             Vitesse = 12;
             Force = 16;
         }
+
+
+        public int Attack_Player_Stagiaire()
+        {
+            return Force;
+        }
+
+        public override int Attack()
+        {
+            return Attack_Player_Stagiaire();
+        }
     }
 }
