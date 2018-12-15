@@ -51,15 +51,10 @@ namespace Rpg_Kys
             Console.WriteLine("2 - Charger une partie");
             Console.WriteLine("3 - A propos");
             Console.WriteLine("4 - Quitter");
-
-
         }
 
         public static int AskChoice(int min, int max)
         {
-            //utilisable partout
-            //demander une valeur entre un et 4, mais faut que ca return un chiffre entre 1 et 4
-
             //int result = Console.ReadLine()[0];
 
             int result = int.Parse(Console.ReadLine());
@@ -69,12 +64,11 @@ namespace Rpg_Kys
                 result = int.Parse(Console.ReadLine());
             }
             return result;
-
         }
 
         public void StartGame()
         {
-            Game();
+            
         }
 
         public void Load()

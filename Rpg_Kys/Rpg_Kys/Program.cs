@@ -10,6 +10,7 @@ namespace Rpg_Kys
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

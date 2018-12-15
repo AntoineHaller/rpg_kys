@@ -12,6 +12,7 @@ namespace Rpg_Kys
         protected int Poids;
         protected int Charisme;
         protected int Inteligence;
+        private int Points;
 
         public Player(string n) : base(n)
         {
@@ -31,7 +32,7 @@ namespace Rpg_Kys
             }
         }
 
-        public bool Test_Intelligence(Player p1, int intelligence_necessaire)
+        public bool Test_Intelligence(Player p1, int intelligence_necessaire) //TODO int intelligence_necessaire fonctionne ? normalement oui
         {
             if (p1.Inteligence > intelligence_necessaire)
             {
@@ -47,13 +48,58 @@ namespace Rpg_Kys
         {
             if (p1.Charisme > charisme_necessaire)
             {
-                return true; //TODO fonctionne ?
+                return true; 
             }
             else
             {
                 return false;
             }
         }
+
+        public bool Test_Taille(Player p1, int taille_necessaire)
+        {
+            if (p1.Taille > taille_necessaire)
+            {
+                return true; 
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Test_Poids(Player p1, int poids_necessaire)
+        {
+            if (p1.Poids > poids_necessaire)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Test_Points(Player p1, int points_necessaire)
+        {
+            if (p1.Points > points_necessaire)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
+        //TEST du compteur de point: 
+
+        public static void Compteur_Points()
+        {
+
+        }
+
+        //FIN TEST du compteur de point: 
 
         public void Move_player()
         {

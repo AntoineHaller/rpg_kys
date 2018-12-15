@@ -13,6 +13,7 @@ namespace Rpg_Kys
         protected int Force;
         protected int Defense;
         protected int Vitesse;
+        
 
         //TODO rajouter inventaire
 
@@ -38,7 +39,18 @@ namespace Rpg_Kys
                 Console.WriteLine("Personnage décédé");
                 return Hp;
             }
+        }
 
+        public bool Test_Vitesse(Character p1, int vitesse_necessaire) //TODO character p1 fonctionne ? ou faut faire cette fonction dans player et dans enemy ?
+        {
+            if (p1.Vitesse > vitesse_necessaire)
+            {
+                return true; //TODO fonctionne ?
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
