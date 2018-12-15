@@ -13,9 +13,12 @@ namespace Rpg_Kys
         protected int Charisme;
         protected int Inteligence;
         private int Points;
+        public Equipment[] Inventaire;
 
         public Player(string n) : base(n)
         {
+            Inventaire = new Equipment[5];
+            Inventaire[0] = new Potion("soin", "Une potion de soin qui vous rend 5 points de vie", 2, Potion.PotionType.Heal);
         }
 
         public override int Damage()
@@ -96,7 +99,7 @@ namespace Rpg_Kys
 
         public static void Compteur_Points()
         {
-
+            //un bon début non ? 
         }
 
         //FIN TEST du compteur de point: 

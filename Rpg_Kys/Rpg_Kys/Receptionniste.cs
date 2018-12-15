@@ -18,6 +18,7 @@ namespace Rpg_Kys
             Hp = 25;
             Vitesse = 11;
             Force = 7;
+            Inventaire[1] = new Weapon("costume", "Un super costume!", 2, Weapon.WeaponType.costume, 1);
         }
 
         public int Attack_Player_Receptionniste()
