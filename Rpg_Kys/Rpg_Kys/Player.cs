@@ -14,6 +14,8 @@ namespace Rpg_Kys
         protected int Inteligence;
         private int Points;
         public Equipment[] Inventaire;
+        public enum PlayerType { RH, Stagiaire, LE_DEV, Receptionniste, Comptable };
+        public PlayerType Type;
 
         public Player(string n) : base(n)
         {
