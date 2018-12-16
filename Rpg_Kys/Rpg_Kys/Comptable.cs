@@ -18,7 +18,7 @@ namespace Rpg_Kys
             Hp = 25;
             Vitesse = 7;
             Force = 7;
-            Inventaire[1] = new Weapon("calculatrice", "Une super calculette!", 2, Weapon.WeaponType.calculatrice, 1);
+            Inventaire[1] = new Weapon("calculatrice", "Une super calculette!", 2, Weapon.WeaponType.calculatrice, 1, 1);
             Type = PlayerType.Comptable;
         }
 

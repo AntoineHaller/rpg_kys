@@ -36,7 +36,7 @@ namespace Rpg_Kys
             }
         }
 
-        public string GetDescription(int x, int y)
+        public string GetDescription(int x, int y) //retourne la description de la case
         {
             string s = La_map[x, y].Description;
             return s;

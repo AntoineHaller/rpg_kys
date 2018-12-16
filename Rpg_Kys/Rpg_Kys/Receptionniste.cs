@@ -18,7 +18,7 @@ namespace Rpg_Kys
             Hp = 25;
             Vitesse = 11;
             Force = 7;
-            Inventaire[1] = new Weapon("costume", "Un super costume!", 2, Weapon.WeaponType.costume, 1);
+            Inventaire[1] = new Weapon("téléphone", "Un super nokia3210!", 2, Weapon.WeaponType.Telephone, 1, 1);
             Type = PlayerType.Receptionniste;
         }
 

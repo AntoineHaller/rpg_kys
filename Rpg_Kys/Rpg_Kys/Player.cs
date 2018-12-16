@@ -12,7 +12,7 @@ namespace Rpg_Kys
         protected int Poids;
         protected int Charisme;
         protected int Inteligence;
-        private int Points;
+        public int Points;
         public Equipment[] Inventaire;
         public enum PlayerType { RH, Stagiaire, LE_DEV, Receptionniste, Comptable };
         public PlayerType Type;
@@ -37,11 +37,11 @@ namespace Rpg_Kys
             }
         }
 
-        public bool Test_Intelligence(Player p1, int intelligence_necessaire) //TODO int intelligence_necessaire fonctionne ? normalement oui
+        public bool Test_Intelligence(Player p1, int intelligence_necessaire)
         {
             if (p1.Inteligence > intelligence_necessaire)
             {
-                return true; //TODO fonctionne ?
+                return true;
             }
             else
             {
@@ -98,13 +98,35 @@ namespace Rpg_Kys
         }
         
         //TEST du compteur de point: 
-
         public static void Compteur_Points()
         {
             //un bon début non ? 
         }
-
         //FIN TEST du compteur de point: 
+
+        //Stats - BETA
+        public void Vos_stats()
+        {
+            Console.WriteLine("Vos stats: \n");
+            Console.WriteLine(Name);
+            Console.WriteLine("Force: " + Force);
+            Console.WriteLine("Points de vie: " + Hp);
+            Console.WriteLine("Défense: " + Defense);
+            Console.WriteLine("Vitesse: " + Vitesse);
+            Console.WriteLine("Poids: " + Poids);
+            Console.WriteLine("Taille: " + Taille);
+            Console.WriteLine("Intelligence: " + Inteligence);
+            Console.WriteLine("Charisme: " + Charisme);
+            Console.WriteLine("Vos Points: " + Points);
+        }
+
+        //Info inventaire  -  BETA
+        public void Votre_Inventaire()
+        {
+            Console.WriteLine("Contenu de votre inventaire: ");
+            Console.WriteLine(Inventaire); //TODO je sais sa ne marche pas mais bon hein on vera demain 
+
+        }
 
         public void Move_player()
         {

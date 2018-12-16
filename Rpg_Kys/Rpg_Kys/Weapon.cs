@@ -8,14 +8,16 @@ namespace Rpg_Kys
 {
     class Weapon : Equipment
     {
-        public enum WeaponType { Balai, Clavier, Missile_Nucleaire, cv, bloc_note, costume, calculatrice }; //TODO mettre les bonnes armes
+        public enum WeaponType { Balai, Clavier, Missile_Nucleaire, Lettre_de_licenciement, bloc_note, Telephone, calculatrice }; //TODO mettre les bonnes armes
         public WeaponType Type;
-        public int Rarity; //en liaison avec des couleurs
+        public int Rarity; //en liaison avec des couleurs ?
+        public int Plus_de_degat;
 
-        public Weapon(string name, string description, int weight, WeaponType t, int rarity) : base(name, description, weight)
+        public Weapon(string name, string description, int weight, WeaponType t, int rarity, int plus_de_degat) : base(name, description, weight)
         {
             Type = t;
             Rarity = rarity;
+            Plus_de_degat = plus_de_degat;
         }
 
         public override void PickUp_Object()

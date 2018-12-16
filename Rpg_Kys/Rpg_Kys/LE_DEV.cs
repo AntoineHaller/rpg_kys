@@ -18,13 +18,13 @@ namespace Rpg_Kys
             Hp = 35;
             Vitesse = 2;
             Force = 8;
-            Inventaire[1] = new Weapon("clavier" , "Un super clavier de G@merzz!", 2, Weapon.WeaponType.Clavier, 1);
+            Inventaire[1] = new Weapon("clavier" , "Un super clavier de G@merzz!", 2, Weapon.WeaponType.Clavier, 1, 2);
             Type = PlayerType.LE_DEV;
         }
 
         public int Attack_Player_DEV()
         {
-            return Force;
+            return Force;  //TODO rajouté dmg arme
         }
 
         public override int Attack()

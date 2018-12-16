@@ -1,0 +1,2 @@
+C:\Users\antoi\Desktop\B2\c#\Cours Ingesup C#\Rpg_Kys\Rpg_Kys\obj\Debug\Rpg_Kys.csprojAssemblyReference.cache
+C:\Users\antoi\Desktop\B2\c#\Cours Ingesup C#\Rpg_Kys\Rpg_Kys\obj\Debug\Rpg_Kys.csproj.CoreCompileInputs.cache

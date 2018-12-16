@@ -22,11 +22,11 @@ namespace Rpg_Kys
 
             if (r.Next() % 100 > 50 && Type == CaseType.Loot)
             {
-               
+               //TODO arme random
             }
             if (r.Next() % 100 < 10 && Type == CaseType.Loot)
             {
-                
+                Weapon GGWP = new Weapon("La petite BOMBE NUCLEAIRE", "Ca fait boumm quand ça explose. Mais c'est lourd.", 100, Weapon.WeaponType.Missile_Nucleaire, 5, 15);
             }
         }
     }
