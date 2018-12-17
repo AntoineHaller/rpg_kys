@@ -47,19 +47,23 @@ namespace Rpg_Kys
                     break;
                 case 2:
                     RH rh1 = new RH(nom_personnage);
-                    Console.WriteLine("Très bon choix! blablabla");
+                    Console.WriteLine("Je vois que son charisme et son bagoût vous plaisent.");
+                    Console.WriteLine("Excellent choix! Il vous servira bien.");
                     break;
                 case 3:
                     Receptionniste receptionniste1 = new Receptionniste(nom_personnage);
-                    Console.WriteLine("Très bon choix! blablabla");
+                    Console.WriteLine("Très bon choix!");
+                    Console.WriteLine("Il est rapide! Et agréable! Et sympathique! Et je n'ai plus d'insipartion pour cette description.");
                     break;
                 case 4:
                     LE_DEV le_dev1 = new LE_DEV(nom_personnage);
-                    Console.WriteLine("Très bon choix! blablabla");
+                    Console.WriteLine("MEILLEUR CHOIX!");
+                    Console.WriteLine("Il se nourrit exclusivement de McDo Nutella/Saucisson et ne se lave pas!");
+                    Console.WriteLine("Du coup il est gros et a la peau épaisse!");
                     break;
                 case 5:
                     Comptable comptable1 = new Comptable(nom_personnage);
-                    Console.WriteLine("Très bon choix! blablabla");
+                    Console.WriteLine("Vous trouvez vous aussi les lunettes sexy?");
                     break;
             }
         }
