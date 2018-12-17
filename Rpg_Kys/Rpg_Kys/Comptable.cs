@@ -35,16 +35,16 @@ namespace Rpg_Kys
             switch (choix_attack)
             {
                 case 1:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Claque dans les dents!");
                     return Force;
                 case 2:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Salutation cordiale");
                     return Charisme;
                 case 3:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Explication du prélévement à la source");
                     return Inteligence;
                 case 4:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("LA GESTION DES COMPTES!");
                     return 10; //utiliser qu'une seule fois
                 default:
                     Console.WriteLine("Mauvaise touche: AUCUNE ATTAQUE NE SERA EFFECTUE!");
