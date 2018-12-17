@@ -24,8 +24,34 @@ namespace Rpg_Kys
 
         public int Attack_Player_RH()
         {
-            return Force;
+            Console.WriteLine("C'est le moment de chosir une attaque!");
+            Console.WriteLine("1 - 1ere attaque");
+            Console.WriteLine("2 - 2eme");
+            Console.WriteLine("3 - 3eme");
+            Console.WriteLine("4 - ulti");
+
+            int choix_attack = Menu.AskChoice(1, 4);
+
+            switch (choix_attack)
+            {
+                case 1:
+                    Console.WriteLine("blablabla");
+                    return Force;
+                case 2:
+                    Console.WriteLine("blablabla");
+                    return Charisme;
+                case 3:
+                    Console.WriteLine("blablabla");
+                    return Inteligence;
+                case 4:
+                    Console.WriteLine("blablabla");
+                    return 10;
+                default:
+                    Console.WriteLine("Mauvaise touche: AUCUNE ATTAQUE NE SERA EFFECTUE!");
+                    return 0;
+            }
         }
+
 
         public override int Attack()
         {
