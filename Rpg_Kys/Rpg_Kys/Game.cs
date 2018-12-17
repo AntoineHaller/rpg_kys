@@ -23,7 +23,9 @@ namespace Rpg_Kys
 
         public void Choix_Perso()
         {
-            Console.WriteLine("C'est le moment de chosir un personnage!"); //TODO MANU ecrire un peu plus
+            Console.WriteLine("C'est le moment de choisir un personnage!"); 
+            Console.WriteLine("Faites le bon choix, car le déroulement de votre épopée formidable pourrait bien en dépendre.");
+            Console.WriteLine("Quel valeureux guerrier vous representera ?");
             Console.WriteLine("1 - Un(e) petit(e) stagiaire");
             Console.WriteLine("2 - Un(e) professionnel(le) chargé(e) des ressources humaines");
             Console.WriteLine("3 - Un(e) receptionniste");
@@ -39,7 +41,9 @@ namespace Rpg_Kys
             {
                 case 1:
                     Stagiaire stagiaire1 = new Stagiaire(nom_personnage);
-                    Console.WriteLine("Très bon choix! blablabla"); //TODO MANU si tu peux améliorer un peu les textes
+                    Console.WriteLine("Très bon choix!"); 
+                    Console.WriteLine("Il porte des cartons et de court toute la journée pour amener des cafés"); 
+                    Console.WriteLine("Sa force et sa vitesse vous satisferont"); 
                     break;
                 case 2:
                     RH rh1 = new RH(nom_personnage);
