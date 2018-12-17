@@ -35,16 +35,16 @@ namespace Rpg_Kys
             switch (choix_attack) //TODO rajouté dmg arme
             {
                 case 1:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Coup de clavier");
                     return Force;
                 case 2:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Balbutiement maladroit");
                     return 0;
                 case 3:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Le C# pour les nuls");
                     return Inteligence;
                 case 4:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("GG EZ");
                     return 10; //utiliser qu'une seule fois
                 default:
                     Console.WriteLine("Mauvaise touche: AUCUNE ATTAQUE NE SERA EFFECTUE!");
