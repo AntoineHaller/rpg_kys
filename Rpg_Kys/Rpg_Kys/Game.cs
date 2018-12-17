@@ -65,6 +65,9 @@ namespace Rpg_Kys
                     Comptable comptable1 = new Comptable(nom_personnage);
                     Console.WriteLine("Vous trouvez vous aussi les lunettes sexy?");
                     break;
+                default:
+                    Console.WriteLine("Mauvaise touche");
+                    break;
             }
         }
 
