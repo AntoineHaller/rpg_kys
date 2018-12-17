@@ -25,9 +25,9 @@ namespace Rpg_Kys
         public int Attack_Player_Receptionniste()
         {
             Console.WriteLine("C'est le moment de chosir une attaque!");
-            Console.WriteLine("1 - 1ere attaque");
-            Console.WriteLine("2 - 2eme");
-            Console.WriteLine("3 - 3eme");
+            Console.WriteLine("1 - Frappe téléphonée");
+            Console.WriteLine("2 - Conversation agréable");
+            Console.WriteLine("3 - gné");
             Console.WriteLine("4 - ulti");
 
             int choix_attack = Menu.AskChoice(1, 4);
@@ -35,16 +35,16 @@ namespace Rpg_Kys
             switch (choix_attack)
             {
                 case 1:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Frappe téléphonée");
                     return Force;
                 case 2:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Conversation agréable");
                     return Charisme;
                 case 3:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("gné by antoine");
                     return Inteligence;
                 case 4:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Appel du Supérieur");
                     return 10; //utiliser qu'une seule fois
                 default:
                     Console.WriteLine("Mauvaise touche: AUCUNE ATTAQUE NE SERA EFFECTUE!");
