@@ -8,28 +8,8 @@ namespace Rpg_Kys
 {
     class Menu //TODO Faire une fonction startmenu() ?
     {
-        public Menu()
-        {
-            PrintMenu();
-            int choix = AskChoice(1, 4);
-            switch (choix)
-            {
-                case 1:
-                    StartGame();
-                    break;
-                case 2:
-                    Load();
-                    break;
-                case 3:
-                    Apropos();
-                    break;
-                case 4:
-                    Quit();
-                    break;
-            }
-        }
 
-        public void PrintMenu()
+        public static void PrintMenu()
         {
             Console.WriteLine("\n\n");
             Console.WriteLine("                      /$$   /$$       /$$     /$$        /$$$$$$ ");
@@ -51,6 +31,23 @@ namespace Rpg_Kys
             Console.WriteLine("2 - Charger une partie");
             Console.WriteLine("3 - A propos");
             Console.WriteLine("4 - Quitter");
+
+            int choix = AskChoice(1, 4);
+            switch (choix)
+            {
+                case 1:
+                    StartGame();
+                    break;
+                case 2:
+                    Load();
+                    break;
+                case 3:
+                    Apropos();
+                    break;
+                case 4:
+                    Quit();
+                    break;
+            }
         }
 
         public static int AskChoice(int min, int max)
@@ -66,22 +63,23 @@ namespace Rpg_Kys
             return result;
         }
 
-        public void StartGame()
+        public static void StartGame()
         {
-            
+            Console.WriteLine("La partie commence!");
+            Game.Choix_Perso();
         }
 
-        public void Load()
+        public static void Load()
         {
             //TODO Faire le Load
         }
 
-        public void Apropos()
+        public static void Apropos()
         {
             //TODO Faire le Apropos
         }
 
-        public void Quit()
+        public static void Quit()
         {
             //TODO Faire le Quit
         }

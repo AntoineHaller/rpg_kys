@@ -10,7 +10,10 @@ namespace Rpg_Kys
     {
         static void Main(string[] args)
         {
+            Menu.PrintMenu();
 
+
+            Console.ReadLine();
         }
     }
 }
