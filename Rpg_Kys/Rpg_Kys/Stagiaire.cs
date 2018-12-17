@@ -26,9 +26,9 @@ namespace Rpg_Kys
         public int Attack_Player_Stagiaire()
         {
             Console.WriteLine("C'est le moment de chosir une attaque!");
-            Console.WriteLine("1 - 1ere attaque");
-            Console.WriteLine("2 - 2eme");
-            Console.WriteLine("3 - 3eme");
+            Console.WriteLine("1 - Frappe du bibi");
+            Console.WriteLine("2 - Esclave des temps modernes");
+            Console.WriteLine("3 - Encore en formation");
             Console.WriteLine("4 - ulti");
 
             int choix_attack = Menu.AskChoice(1, 4);
@@ -36,17 +36,17 @@ namespace Rpg_Kys
             switch (choix_attack)
             {
                 case 1:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Frappe du bibi");
                     return Force;
                 case 2:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Esclave des temps modernes");
                     return Charisme;
                 case 3:
-                    Console.WriteLine("blablabla");
+                    Console.WriteLine("Encore en formation");
                     return Inteligence;
                 case 4:
-                    Console.WriteLine("blablabla");
-                    return 10; //utiliser qu'une seule fois
+                    Console.WriteLine("IMMOLATION PAR LE FEU");
+                    return 50; //utiliser qu'une seule fois
                 default:
                     Console.WriteLine("Mauvaise touche: AUCUNE ATTAQUE NE SERA EFFECTUE!");
                     return 0;
