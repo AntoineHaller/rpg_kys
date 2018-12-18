@@ -76,16 +76,71 @@ namespace Rpg_Kys
                 }
             }
 
-            if (Type == CaseType.Loot)
+            //Item basiques
+            if (r.Next() % 100 >= 10 && Type == CaseType.Loot)
             {
-                if (r.Next() % 100 > 50)
+                Random r2 = new Random(DateTime.Now.Millisecond);
+                
+                if(r.Next() % 100 >= 90)
                 {
-                    //TODO arme random
+                    Weapon balai = new Weapon("balai", "Un jolie balai!", 3, Weapon.WeaponType.Balai, 2, -1, 0);
                 }
-
-                if (r.Next() % 100 < 10)
+                if (r.Next() % 100 >= 80 && r.Next() % 100 < 90)
                 {
-                    Weapon GGWP = new Weapon("La petite BOMBE NUCLEAIRE", "Ca fait boumm quand ça explose. Mais c'est lourd.", 100, Weapon.WeaponType.Missile_Nucleaire, 5, 15);
+                    Weapon carte_acces = new Weapon("carte d'accès", "Comme une carte bleu mais elle est pas bleu, ELLE EST ROUGE!!", 1, Weapon.WeaponType.Carte_acces, 0, 2, 2);
+                }
+                if (r.Next() % 100 >= 70 && r.Next() % 100 < 80)
+                {
+                    Weapon extincteur = new Weapon("extincteur", "Un SUPER extincteur, pour refroidir l'adversaire", 4, Weapon.WeaponType.Extincteur, 3, 0, 0);
+                }
+                if (r.Next() % 100 >= 60 && r.Next() % 100 < 70)
+                {
+                    Weapon bouquet_fleur = new Weapon("bouquet de fleur", "Bah c'est plusieurs fleurs qui ensemble forment un bouquet, rien d'execptionnel...", 2, Weapon.WeaponType.Bouquet_de_fleurs, 1, 2, 0);
+                }
+                if (r.Next() % 100 >= 50 && r.Next() % 100 < 60)
+                {
+                    Weapon agrafeuse = new Weapon("agrafeuse", "Une jolie agrafeuse!", 2, Weapon.WeaponType.agrafeuse, 2, 0, 1);
+                }
+                if (r.Next() % 100 >= 40 && r.Next() % 100 < 50)
+                {
+                    Weapon tablette = new Weapon("tablette", "Une jolie tablette!", 2, Weapon.WeaponType.tablette, 1, 1, 1);
+                }
+                if (r.Next() % 100 >= 30 && r.Next() % 100 < 40)
+                {
+                    Weapon micro_onde = new Weapon("four à micro onde", "Un jolie four à micro ondes!", 3, Weapon.WeaponType.micro_onde, 4, 0, 0);
+                }
+                if (r.Next() % 100 >= 20 && r.Next() % 100 < 30)
+                {
+                    Weapon panier_repas = new Weapon("panier repas", "Un jolie panier repas!", 2, Weapon.WeaponType.panier_repas, 2, 2, 0);
+                }
+                if (r.Next() % 100 >= 10 && r.Next() % 100 < 20)
+                {
+                    Weapon sapin = new Weapon("sapin de noel", "Un jolie sapin de nÖel!", 3, Weapon.WeaponType.sapin_noel, 2, 2, 0);
+                }
+                if (r.Next() % 100 >= 0 && r.Next() % 100 < 10)
+                {
+                    Weapon mouchoir = new Weapon("mouchoir", "C'est un simple mouchoir..", 1, Weapon.WeaponType.mouchoir, 0, 1, 0);
+                }
+            }
+
+            //Item très rare
+            if (r.Next() % 100 < 10 && Type == CaseType.Loot)
+            {
+                if (r.Next() % 100 >= 70)
+                {
+                    Weapon GGWP = new Weapon("La petite BOMBE NUCLEAIRE", "Ca fait boumm quand ça explose. Mais c'est lourd.", 100, Weapon.WeaponType.Missile_Nucleaire, 15, 0, 0);
+                }
+                if (r.Next() % 100 >= 60 && r.Next() % 100 < 70) //item op
+                {
+                    Weapon prof = new Weapon("Professeur Loïc Janin", "amuse toi manu", 1, Weapon.WeaponType.prof, 999, 999, 999);
+                }
+                if (r.Next() % 100 >= 50 && r.Next() % 100 < 60) //item pas de chance
+                {
+                    Weapon mcdo = new Weapon("Carte de fidélité McDonald", "Bien joué vous avez gagnez une carte de fidélité McDonald. Vous allez grossir jusqu'à en mourir. Bien joué.", 0, Weapon.WeaponType.mcdo, -100, -100, -999);
+                }
+                if (r.Next() % 100 >= 0 && r.Next() % 100 < 50)
+                {
+                    Weapon cheat = new Weapon("Cheat Codes", "R1, R2, L1, R2, Gauche, Bas, Droite, Haut, Gauche, Bas, Droite, Haut", 0, Weapon.WeaponType.cheat, 30, -5, -5);
                 }
             }
             
