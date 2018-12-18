@@ -91,7 +91,7 @@ namespace Rpg_Kys
                 }
                 if (r.Next() % 100 >= 70 && r.Next() % 100 < 80)
                 {
-                    Weapon extincteur = new Weapon("extincteur", "Un SUPER extincteur, pour refroidir l'adversaire", 4, Weapon.WeaponType.Extincteur, 3, 0, 0);
+                    Weapon extincteur = new Weapon("extincteur", "Un SUPER extincteur pour refroidir l'adversaire", 4, Weapon.WeaponType.Extincteur, 3, 0, 0);
                 }
                 if (r.Next() % 100 >= 60 && r.Next() % 100 < 70)
                 {
@@ -99,23 +99,23 @@ namespace Rpg_Kys
                 }
                 if (r.Next() % 100 >= 50 && r.Next() % 100 < 60)
                 {
-                    Weapon agrafeuse = new Weapon("agrafeuse", "Une jolie agrafeuse!", 2, Weapon.WeaponType.agrafeuse, 2, 0, 1);
+                    Weapon agrafeuse = new Weapon("agrafeuse", "Une jolie agrafeuse, mais il manque les agrafes....", 2, Weapon.WeaponType.agrafeuse, 2, 0, 1);
                 }
                 if (r.Next() % 100 >= 40 && r.Next() % 100 < 50)
                 {
-                    Weapon tablette = new Weapon("tablette", "Une jolie tablette!", 2, Weapon.WeaponType.tablette, 1, 1, 1);
+                    Weapon tablette = new Weapon("tablette", "Tout dernier modèle AIrPaD XS 8 pour la modique somme de 92 billions de dollars", 2, Weapon.WeaponType.tablette, 1, 1, 1);
                 }
                 if (r.Next() % 100 >= 30 && r.Next() % 100 < 40)
                 {
-                    Weapon micro_onde = new Weapon("four à micro onde", "Un jolie four à micro ondes!", 3, Weapon.WeaponType.micro_onde, 4, 0, 0);
+                    Weapon micro_onde = new Weapon("four à micro onde", "Four à micro-ondes pour recharger son téléphone", 3, Weapon.WeaponType.micro_onde, 4, 0, 0);
                 }
                 if (r.Next() % 100 >= 20 && r.Next() % 100 < 30)
                 {
-                    Weapon panier_repas = new Weapon("panier repas", "Un jolie panier repas!", 2, Weapon.WeaponType.panier_repas, 2, 2, 0);
+                    Weapon panier_repas = new Weapon("panier repas", "J'avais faim alors j'ai codé un panier repas", 2, Weapon.WeaponType.panier_repas, 2, 2, 0);
                 }
                 if (r.Next() % 100 >= 10 && r.Next() % 100 < 20)
                 {
-                    Weapon sapin = new Weapon("sapin de noel", "Un jolie sapin de nÖel!", 3, Weapon.WeaponType.sapin_noel, 2, 2, 0);
+                    Weapon sapin = new Weapon("sapin de noel", "Un jolie sapin de nÖel! JOYEUX NOËL", 3, Weapon.WeaponType.sapin_noel, 2, 2, 0);
                 }
                 if (r.Next() % 100 >= 0 && r.Next() % 100 < 10)
                 {
@@ -132,7 +132,7 @@ namespace Rpg_Kys
                 }
                 if (r.Next() % 100 >= 60 && r.Next() % 100 < 70) //item op
                 {
-                    Weapon prof = new Weapon("Professeur Loïc Janin", "amuse toi manu", 1, Weapon.WeaponType.prof, 999, 999, 999);
+                    Weapon prof = new Weapon("Professeur Loïc Janin", "Connaissance infinies, charisme infini, POUVOIR INFINI", 1, Weapon.WeaponType.prof, 999, 999, 999);
                 }
                 if (r.Next() % 100 >= 50 && r.Next() % 100 < 60) //item pas de chance
                 {
