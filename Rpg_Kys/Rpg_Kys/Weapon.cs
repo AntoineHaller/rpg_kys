@@ -12,12 +12,16 @@ namespace Rpg_Kys
         public WeaponType Type;
         public int Rarity; //en liaison avec des couleurs ?
         public int Plus_de_degat;
+        public int Plus_de_charisme;
+        public int Plus_d_intelligence;
 
-        public Weapon(string name, string description, int weight, WeaponType t, int rarity, int plus_de_degat) : base(name, description, weight)
+        public Weapon(string name, string description, int weight, WeaponType t, int rarity, int plus_de_degat, int plus_de_charisme, int plus_d_intelligence) : base(name, description, weight)
         {
             Type = t;
             Rarity = rarity;
             Plus_de_degat = plus_de_degat;
+            Plus_de_charisme = plus_de_charisme;
+            Plus_d_intelligence = plus_d_intelligence;
         }
 
         public override void PickUp_Object()
