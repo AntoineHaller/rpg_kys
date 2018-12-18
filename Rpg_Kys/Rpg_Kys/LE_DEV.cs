@@ -18,7 +18,7 @@ namespace Rpg_Kys
             Hp = 35;
             Vitesse = 2;
             Force = 8;
-            Inventaire[1] = new Weapon("clavier" , "Un super clavier de G@merzz!", 2, Weapon.WeaponType.Clavier, 1, 2);
+            Inventaire[1] = new Weapon("clavier" , "Un super clavier de G@merzz!", 2, Weapon.WeaponType.Clavier, 1, -1, 1);
             Type = PlayerType.LE_DEV;
         }
 

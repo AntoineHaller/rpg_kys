@@ -18,7 +18,7 @@ namespace Rpg_Kys
             Hp = 25;
             Vitesse = 5;
             Force = 5;
-            Inventaire[1] = new Weapon("lettre de licenciement", "Une petite lettre de licenciement! A utiliser sans modération.", 1, Weapon.WeaponType.Lettre_de_licenciement, 1, 1);
+            Inventaire[1] = new Weapon("lettre de licenciement", "Une petite lettre de licenciement! A utiliser sans modération.", 1, Weapon.WeaponType.Lettre_de_licenciement, 0, 2, 0);
             Type = PlayerType.RH;
         }
 
