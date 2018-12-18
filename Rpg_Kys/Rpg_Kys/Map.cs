@@ -26,11 +26,11 @@ namespace Rpg_Kys
                         La_map[i, j] = new Case(Case.CaseType.Loot, "En fouillant bien autour de vous, vous trouvez un objet intéressant.");
                     if (j == 3 && i ==1)
                         La_map[i, j] = new Case(Case.CaseType.Enigme, "Un post-it vous attend. Quelques lignes sont inscrites dessus. Vous vous sentez obligé d'y répondre.");
-                    if (j == 3)
+                    if (j == 3 && i !=1)
                         La_map[i, j] = new Case(Case.CaseType.Fotocopieuse, "Vous tombez nez à nez à une FOTOcopieuse. Pas le choix. Elle sent votre peur. Vous devez attendre qu'elle se rendorme.");
                     if (j == 4 && i == 2)
                         La_map[i, j] = new Case(Case.CaseType.Pdg, "Vous y êtes enfin. L'antre du boss final est devant vous.");
-                    if (j == 4)
+                    if (j == 4 && i != 2)
                         La_map[i, j] = new Case(Case.CaseType.Rencontre, "Vous croisez un de vos collegues, il ne semble pas vouloir vous laisser passer.");
 
 
