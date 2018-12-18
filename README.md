@@ -72,3 +72,4 @@ de la couleur ^^"
 Cadeau: 1 potion de heal pour tout le monde et 1 arme dès le début (arme change en fonction du perso, clavier pour le dev,
 un bloc-note pour le stagiaire, etc) //TODO dit moi quelles armes on met aux autres ?
 
+crit ?
