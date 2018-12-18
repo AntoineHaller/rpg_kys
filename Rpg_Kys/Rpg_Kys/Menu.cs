@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Rpg_Kys
@@ -76,12 +77,19 @@ namespace Rpg_Kys
 
         public static void Apropos()
         {
-            //TODO Faire le Apropos
+            Console.WriteLine("Nous sommes honorés que vous preniez la peine de venir nous voir ici!");
+            Console.WriteLine("Ce jeu a été réalisé par Antoine AH et Emmanuela Papyrus");
+            Console.WriteLine("Il represente l'accomplissement d'une vie entière de durs labeurs");
+            Console.WriteLine("Souscrivez à un abonnement!");
+            Thread.Sleep(3000);
+            PrintMenu();
         }
 
         public static void Quit()
         {
-            //TODO Faire le Quit
+            Console.WriteLine("Ce n'est pas grave de céder face à l'adversité.");
+            Thread.Sleep(5000);
+            Environment.Exit(0);
         }
     }
 }
