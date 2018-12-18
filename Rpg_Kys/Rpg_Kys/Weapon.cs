@@ -8,7 +8,7 @@ namespace Rpg_Kys
 {
     class Weapon : Equipment
     {
-        public enum WeaponType { Balai, Clavier, Missile_Nucleaire, Lettre_de_licenciement, bloc_note, Telephone, calculatrice, Carte_acces, Extincteur, Bouquet_de_fleurs }; //TODO mettre les bonnes armes
+        public enum WeaponType { Balai, Clavier, Missile_Nucleaire, Lettre_de_licenciement, bloc_note, Telephone, calculatrice, Carte_acces, Extincteur, Bouquet_de_fleurs, agrafeuse, tablette, micro_onde, panier_repas, sapin_noel, prof, mouchoir, cheat, mcdo }; //TODO mettre les bonnes armes
         public WeaponType Type;
         public int Plus_de_degat;
         public int Plus_de_charisme;
