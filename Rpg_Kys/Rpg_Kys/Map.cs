@@ -36,7 +36,7 @@ namespace Rpg_Kys
                 Console.WriteLine();
             }
             if (p.y == 0 && p.x == 0)
-                La_map[p.x, p.y] = new Case(Case.CaseType.start);
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
 
             if (p.y == 0 && p.x == 1)
                 La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
@@ -45,19 +45,49 @@ namespace Rpg_Kys
                 La_map[p.x, p.y] = new Case(Case.CaseType.Loot);
 
             if (p.y == 0 && p.x == 3)
-                La_map[p.x, p.y] = new Case(Case.CaseType.Enigme);
+                La_map[p.x, p.y] = new Case(Case.CaseType.Pdg);
 
             if (p.y == 1 && p.x == 0)
-                La_map[p.x, p.y] = new Case(Case.CaseType.start);
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
 
             if (p.y == 1 && p.x == 1)
-                La_map[p.x, p.y] = new Case(Case.CaseType.Pdg);
+                La_map[p.x, p.y] = new Case(Case.CaseType.Loot);
 
             if (p.y == 1 && p.x == 2)
                 La_map[p.x, p.y] = new Case(Case.CaseType.Rien);
 
             if (p.y == 1 && p.x == 3)
                 La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
+
+            if (p.y == 2)//ligne full enemy
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
+
+            if (p.y == 4)//ligne full enemy
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
+
+            if (p.y == 3 && p.x == 0)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Loot);
+
+            if (p.y == 3 && p.x == 1)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
+
+            if (p.y == 3 && p.x == 2)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Loot);
+
+            if (p.y == 3 && p.x == 3)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Enigme);
+
+            if (p.y == 5 && p.x == 0)
+                La_map[p.x, p.y] = new Case(Case.CaseType.start);
+
+            if (p.y == 5 && p.x == 1)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Loot);
+
+            if (p.y == 5 && p.x == 2)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
+
+            if (p.y == 5 && p.x == 3)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Enigme);
         }
     }
 }
