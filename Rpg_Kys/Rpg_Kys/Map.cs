@@ -36,21 +36,21 @@ namespace Rpg_Kys
                 Console.WriteLine();
             }
             if (p.y == 0 && p.x == 0)
-                La_map[p.x, p.y] = new Case(Case.CaseType.start, "Vous êtes en bas de votre immeuble, rien ne se passe.");
+                La_map[p.x, p.y] = new Case(Case.CaseType.start);
             if (p.y == 0 && p.x == 1)
-                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre, "Vous croisez un de vos collegues, il ne semble pas vouloir vous laisser passer.");
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
             if (p.y == 0 && p.x == 2)
-                La_map[p.x, p.y] = new Case(Case.CaseType.Loot, "En fouillant bien autour de vous, vous trouvez un objet intéressant.");
+                La_map[p.x, p.y] = new Case(Case.CaseType.Loot);
             if (p.y == 0 && p.x == 3)
-                La_map[p.x, p.y] = new Case(Case.CaseType.Enigme, "Un post-it vous attend. Quelques lignes sont inscrites dessus. Vous vous sentez obligé d'y répondre.");
+                La_map[p.x, p.y] = new Case(Case.CaseType.Enigme);
             if (p.y == 1 && p.x == 0)
-                La_map[p.x, p.y] = new Case(Case.CaseType.Fotocopieuse, "Vous tombez nez à nez à une FOTOcopieuse. Pas le choix. Elle sent votre peur. Vous devez attendre qu'elle se rendorme.");
+                La_map[p.x, p.y] = new Case(Case.CaseType.start);
             if (p.y == 1 && p.x == 1)
-                La_map[p.x, p.y] = new Case(Case.CaseType.Pdg, "Vous y êtes enfin. L'antre du boss final est devant vous.");
+                La_map[p.x, p.y] = new Case(Case.CaseType.Pdg);
             if (p.y == 1 && p.x == 2)
-                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre, "Vous croisez un de vos collegues, il ne semble pas vouloir vous laisser passer.");
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
             if (p.y == 1 && p.x == 3)
-                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre, "Vous êtes en bas de votre immeuble, rien ne se passe.");
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
         }
     }
 }

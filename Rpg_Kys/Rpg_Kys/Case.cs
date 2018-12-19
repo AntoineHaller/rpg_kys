@@ -12,14 +12,11 @@ namespace Rpg_Kys
         public enum CaseType { Rien, Fotocopieuse, Pdg, Rencontre, Loot, Enigme, start }
 
         public CaseType Type;
-        public string Description;
         public int Sleep = 4000;
 
-        public Case(CaseType type, string description)
+        public Case(CaseType type)
         {
             Type = type;
-            Description = description;
-
 
             Random r = new Random(DateTime.Now.Millisecond);
 
@@ -66,7 +63,7 @@ namespace Rpg_Kys
 
             if (Type == CaseType.Rencontre)
             {
-                Console.WriteLine("C'EST UNE RENCONTRE MDRRRRRRRRRRRRR");
+                Console.WriteLine("C'EST LA CASE RENCONTRE");
                 Console.WriteLine("Rencontre");
                 if (r.Next() % 100 >= 80)
                 {
