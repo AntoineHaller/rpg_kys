@@ -8,6 +8,8 @@ namespace Rpg_Kys
 {
     class Player : Character
     {
+        public int y; 
+        public int x;
         protected int Taille;
         protected int Poids;
         protected int Charisme;
