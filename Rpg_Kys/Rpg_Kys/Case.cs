@@ -67,7 +67,7 @@ namespace Rpg_Kys
                 Random r4 = new Random(DateTime.Now.Millisecond);
                 Thread.Sleep(small);
                 Console.WriteLine("Case Rencontre");
-                if (r4.Next() % 100 >= 0)
+                if (r4.Next() % 100 >= 80)
                 {
                     ColleagueMedium enemy = new ColleagueMedium("Jozyane Balavoine");
                     Console.WriteLine(enemy.Name + " vous approche. Elle vous a toujours effrayé!");
@@ -87,10 +87,10 @@ namespace Rpg_Kys
                         Thread.Sleep(Sleep*2);
                         Environment.Exit(0);
                     }
-                        
+                        //MDR CA MARCHE PAS CAR TA FAIRE UNE ERREUR STUPID MDRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 
                 }
-                if (r4.Next() % 100 >= 50 && r.Next() % 100 < 80)
+                if (r4.Next() % 100 >= 50 && r4.Next() % 100 < 80)
                 {
                     ColleagueFast enemy = new ColleagueFast("Frédéric l'accro du sport");
                     Console.WriteLine(enemy.Name);
@@ -111,7 +111,7 @@ namespace Rpg_Kys
                         Environment.Exit(0);
                     }
                 }
-                if (r4.Next() % 100 > 10 && r.Next() % 100 < 50)
+                if (r4.Next() % 100 > 10 && r4.Next() % 100 < 50)
                 {
                     ColleagueWeak enemy = new ColleagueWeak("Thomas N. la t");
                     Console.WriteLine(enemy.Name);
