@@ -13,6 +13,7 @@ namespace Rpg_Kys
 
         public CaseType Type;
         public int Sleep = 4000;
+        public int small = 1000;
 
         public Case(CaseType type)
         {
@@ -23,18 +24,20 @@ namespace Rpg_Kys
             if (Type == CaseType.start)
             {
                 Console.WriteLine("Vous êtes en bas de votre immeuble, c'est le début.");
+                Thread.Sleep(small);
                 Console.WriteLine("A vous de vous déplacer sur la map!");
-                
+
             }
 
             if (Type == CaseType.Rien)
             {
-                Console.WriteLine("Vous êtes en bas de votre immeuble, rien ne se passe.");
+                Thread.Sleep(small);
                 Console.WriteLine("Rien ne se passe. GO NEXT.");
             }
 
             if (Type == CaseType.Fotocopieuse)
             {
+                Thread.Sleep(small);
                 Console.WriteLine("Vous tombez nez à nez à une FOTOcopieuse. Pas le choix. Elle sent votre peur. Vous devez attendre qu'elle se rendorme.");
                 Console.WriteLine("Une page a été imprimé");
                 Thread.Sleep(Sleep);
@@ -57,40 +60,48 @@ namespace Rpg_Kys
 
             if (Type == CaseType.Pdg)
             {
+                Thread.Sleep(small);
                 Console.WriteLine("Vous y êtes enfin. L'antre du boss final est devant vous.");
                 PDG Boss = new PDG("José");
             }
 
             if (Type == CaseType.Rencontre)
             {
+                Random r4 = new Random(DateTime.Now.Millisecond);
                 Console.WriteLine("C'EST LA CASE RENCONTRE");
+                Thread.Sleep(small);
                 Console.WriteLine("Rencontre");
-                if (r.Next() % 100 >= 80)
+                if (r4.Next() % 100 >= 80)
                 {
                     ColleagueMedium enemy = new ColleagueMedium("Jozyane Balavoine");
+                    Console.WriteLine("Medium00");
                 }
-                if(r.Next() % 100 >=50 && r.Next() % 100 < 80)
+                if (r4.Next() % 100 >= 50 && r.Next() % 100 < 80)
                 {
                     ColleagueFast enemy = new ColleagueFast("Frédéric l'accro du sport");
+                    Console.WriteLine("Fast00");
                 }
-                if (r.Next() % 100 > 100 && r.Next() % 100 < 50)
+                if (r4.Next() % 100 > 100 && r.Next() % 100 < 50)
                 {
                     ColleagueWeak enemy = new ColleagueWeak("Thomas N. la t");
+                    Console.WriteLine("Weak00");
                 }
 
-                if (r.Next() % 100 <= 10)
+                if (r4.Next() % 100 <= 10)
                 {
                     ColleagueStrong enemy = new ColleagueStrong("Manager enervé");
+                    Console.WriteLine("Strong00");
                 }
             }
 
             //Item basiques
             if (r.Next() % 100 >= 10 && Type == CaseType.Loot)
             {
+                Thread.Sleep(small);
                 Console.WriteLine("En fouillant bien autour de vous, vous trouvez un objet intéressant.");
                 Random r2 = new Random(DateTime.Now.Millisecond);
-                
-                if(r2.Next() % 100 >= 90)
+
+                if (r2.Next() % 100 >= 90)
                 {
                     Weapon balai = new Weapon("balai", "Un jolie balai!", 3, Weapon.WeaponType.Balai, 2, -1, 0);
                 }
@@ -136,7 +147,7 @@ namespace Rpg_Kys
             if (r.Next() % 100 < 10 && Type == CaseType.Loot)
             {
                 Random r3 = new Random(DateTime.Now.Millisecond);
-                
+
                 if (r3.Next() % 100 >= 70)
                 {
                     Weapon GGWP = new Weapon("La petite BOMBE NUCLEAIRE", "Ca fait boumm quand ça explose. Mais c'est lourd.", 100, Weapon.WeaponType.Missile_Nucleaire, 15, 0, 0);
@@ -154,10 +165,11 @@ namespace Rpg_Kys
                     Weapon cheat = new Weapon("Cheat Codes", "R1, R2, L1, R2, Gauche, Bas, Droite, Haut, Gauche, Bas, Droite, Haut", 0, Weapon.WeaponType.cheat, 30, -5, -5);
                 }
             }
-            
+
 
             if (Type == CaseType.Enigme)
             {
+                Thread.Sleep(small);
                 Console.WriteLine("Un post-it vous attend. Quelques lignes sont inscrites dessus. Vous vous sentez obligé d'y répondre.");
                 //TO DO Enigme
             }
@@ -165,66 +177,66 @@ namespace Rpg_Kys
 
         public static void Move_player(Player p)
         {
-            
-                switch (Console.ReadKey().Key)
-                {
-                    case ConsoleKey.S:
-                        if (p.y < 1)
-                        {
-                            p.y++;
-                            Console.WriteLine("En bas!");
-                            Console.WriteLine("x="+p.x+"  y="+p.y);
-                        }
-                        else
-                        {
-                            Console.WriteLine("aie aie aie aie JAI BOUFFE LE MUR");
-                        }
-                        break;
-                    case ConsoleKey.Z:
-                        if (p.y > 0)
-                        {
-                            p.y--;
-                            Console.WriteLine("En haut!");
-                            Console.WriteLine("x=" + p.x + "  y=" + p.y);
-                        }
-                        else
-                        {
-                            Console.WriteLine("aie aie aie aie JAI BOUFFE LE MUR");
-                        }
-                        
-                        break;
-                    case ConsoleKey.Q:
-                        if (p.x > 0)
-                        {
-                            p.x--;
-                            Console.WriteLine("A Gauche!");
-                            Console.WriteLine("x=" + p.x + "  y=" + p.y);
-                        }
-                        
-                        else
-                        {
-                            Console.WriteLine("aie aie aie aie JAI BOUFFE LE MUR");
-                        }
-                        break;
-                    case ConsoleKey.D:
-                        if (p.x < 3)
-                        {
-                            p.x++;
-                            Console.WriteLine("A Droite!");
-                            Console.WriteLine("x=" + p.x + "  y=" + p.y);
-                        }
-                        else
-                        {
-                            Console.WriteLine("aie aie aie aie JAI BOUFFE LE MUR");
-                        }
-                        break;
-                    default:
-                        Console.WriteLine("ERREUR! Mauvaise touche!");
-                        break;
 
-                }
-            
-            
+            switch (Console.ReadKey().Key)
+            {
+                case ConsoleKey.S:
+                    if (p.y < 1)
+                    {
+                        p.y++;
+                        Console.WriteLine("\n\nEn bas!");
+                        Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n\naie aie aie aie JAI BOUFFE LE MUR");
+                    }
+                    break;
+                case ConsoleKey.Z:
+                    if (p.y > 0)
+                    {
+                        p.y--;
+                        Console.WriteLine("\n\nEn haut!");
+                        Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n\naie aie aie aie JAI BOUFFE LE MUR");
+                    }
+
+                    break;
+                case ConsoleKey.Q:
+                    if (p.x > 0)
+                    {
+                        p.x--;
+                        Console.WriteLine("\n\nA Gauche!");
+                        Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("\n\naie aie aie aie JAI BOUFFE LE MUR");
+                    }
+                    break;
+                case ConsoleKey.D:
+                    if (p.x < 3)
+                    {
+                        p.x++;
+                        Console.WriteLine("\n\nA Droite!");
+                        Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n\naie aie aie aie JAI BOUFFE LE MUR");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("\n\nERREUR! Mauvaise touche!");
+                    break;
+
+            }
+
+
         }
     }
 }
