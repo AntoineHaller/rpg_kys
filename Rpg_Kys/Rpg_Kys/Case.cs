@@ -9,11 +9,11 @@ namespace Rpg_Kys
 {
     class Case
     {
-        public enum CaseType { Rien, Fotocopieuse, Pdg, Rencontre, Loot, Enigme } //rouge fond enigme cheval blanc
+        public enum CaseType { Rien, Fotocopieuse, Pdg, Rencontre, Loot, Enigme, start }
 
         public CaseType Type;
         public string Description;
-        private int Sleep = 4000;
+        public int Sleep = 4000;
 
         public Case(CaseType type, string description)
         {
@@ -23,14 +23,22 @@ namespace Rpg_Kys
 
             Random r = new Random(DateTime.Now.Millisecond);
 
+            if (Type == CaseType.start)
+            {
+                Console.WriteLine("Vous êtes en bas de votre immeuble, c'est le début.");
+                Console.WriteLine("A vous de vous déplacer sur la map!");
+                
+            }
+
             if (Type == CaseType.Rien)
             {
+                Console.WriteLine("Vous êtes en bas de votre immeuble, rien ne se passe.");
                 Console.WriteLine("Rien ne se passe. GO NEXT.");
             }
 
             if (Type == CaseType.Fotocopieuse)
             {
-                Thread.Sleep(Sleep);
+                Console.WriteLine("Vous tombez nez à nez à une FOTOcopieuse. Pas le choix. Elle sent votre peur. Vous devez attendre qu'elle se rendorme.");
                 Console.WriteLine("Une page a été imprimé");
                 Thread.Sleep(Sleep);
                 Console.WriteLine("ZzzzZ");
@@ -52,11 +60,14 @@ namespace Rpg_Kys
 
             if (Type == CaseType.Pdg)
             {
+                Console.WriteLine("Vous y êtes enfin. L'antre du boss final est devant vous.");
                 PDG Boss = new PDG("José");
             }
 
             if (Type == CaseType.Rencontre)
             {
+                Console.WriteLine("En fouillant bien autour de vous, vous trouvez un objet intéressant.");
+                Console.WriteLine("Rencontre");
                 if (r.Next() % 100 >= 80)
                 {
                     ColleagueMedium enemy = new ColleagueMedium("Jozyane Balavoine");
@@ -79,6 +90,7 @@ namespace Rpg_Kys
             //Item basiques
             if (r.Next() % 100 >= 10 && Type == CaseType.Loot)
             {
+                Console.WriteLine("En fouillant bien autour de vous, vous trouvez un objet intéressant.");
                 Random r2 = new Random(DateTime.Now.Millisecond);
                 
                 if(r2.Next() % 100 >= 90)
@@ -149,9 +161,73 @@ namespace Rpg_Kys
 
             if (Type == CaseType.Enigme)
             {
-                Console.WriteLine("C'est très les enigmes");
+                Console.WriteLine("Un post-it vous attend. Quelques lignes sont inscrites dessus. Vous vous sentez obligé d'y répondre.");
                 //TO DO Enigme
             }
+        }
+
+        public static void Move_player(Player p)
+        {
+            
+                switch (Console.ReadKey().Key)
+                {
+                    case ConsoleKey.S:
+                        if (p.y < 1)
+                        {
+                            p.y++;
+                            Console.WriteLine("En bas!");
+                            Console.WriteLine("x="+p.x+"  y="+p.y);
+                        }
+                        else
+                        {
+                            Console.WriteLine("aie aie aie aie JAI BOUFFE LE MUR");
+                        }
+                        break;
+                    case ConsoleKey.Z:
+                        if (p.y > 0)
+                        {
+                            p.y--;
+                            Console.WriteLine("En haut!");
+                            Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                        }
+                        else
+                        {
+                            Console.WriteLine("aie aie aie aie JAI BOUFFE LE MUR");
+                        }
+                        
+                        break;
+                    case ConsoleKey.Q:
+                        if (p.x > 0)
+                        {
+                            p.x--;
+                            Console.WriteLine("A Gauche!");
+                            Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                        }
+                        
+                        else
+                        {
+                            Console.WriteLine("aie aie aie aie JAI BOUFFE LE MUR");
+                        }
+                        break;
+                    case ConsoleKey.D:
+                        if (p.x < 3)
+                        {
+                            p.x++;
+                            Console.WriteLine("A Droite!");
+                            Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                        }
+                        else
+                        {
+                            Console.WriteLine("aie aie aie aie JAI BOUFFE LE MUR");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("ERREUR! Mauvaise touche!");
+                        break;
+
+                }
+            
+            
         }
     }
 }

@@ -8,25 +8,25 @@ namespace Rpg_Kys
 {
     class Map
     {
-        public static int pos_x = 1;
-        public static int pos_y = 0;
-        public static int x = 4;
-        public static int y = 2;
-        public static Case[,] La_map = new Case[x, y];
-
+        public int joueur_x;
+        public int joueur_y;
+        public int x = 4;
+        public int y = 2;
+        public Case[,] La_map = new Case[4, 2];
+    
         public Map()
         {
         }
 
-        public static void position_joueur()
+        public void position_joueur()
         {
 
         }
 
-        public static void test_case_joueur(int j, int i)
+        public void test_case_joueur(int j, int i)
         {
             if (j == 0 && i == 0)
-                La_map[i, j] = new Case(Case.CaseType.Rien, "Vous êtes en bas de votre immeuble, rien ne se passe.");
+                La_map[i, j] = new Case(Case.CaseType.start, "Vous êtes en bas de votre immeuble, rien ne se passe.");
             if (j == 1 && i == 0)
                 La_map[i, j] = new Case(Case.CaseType.Rencontre, "Vous croisez un de vos collegues, il ne semble pas vouloir vous laisser passer.");
             if (j == 2 && i == 0)
@@ -40,11 +40,11 @@ namespace Rpg_Kys
             if (j == 2 && i == 1)
                 La_map[i, j] = new Case(Case.CaseType.Rencontre, "Vous croisez un de vos collegues, il ne semble pas vouloir vous laisser passer.");
             if (j == 3 && i == 1)
-                La_map[i, j] = new Case(Case.CaseType.Rencontre, "Vous croisez un de vos collegues, il ne semble pas vouloir vous laisser passer.");
+                La_map[i, j] = new Case(Case.CaseType.Rencontre, "Vous êtes en bas de votre immeuble, rien ne se passe.");
         }
 
 
-        public static void Print_Map()
+        public void Print_Map(Player p)
         {
             Console.WriteLine("\n Voici la map, à vous de vous déplacer");
 
@@ -52,18 +52,21 @@ namespace Rpg_Kys
             {
                 for (int e = 0; e < x; e++)
                 {
-                    Console.Write("[" + "  " + "]");
+                    if (p.y <= 1 && p.y >= 0 && p.x >= 0 && p.x <= 3) { 
+                        if (i == p.y && e == p.x)
+                            Console.Write("[" + "la" + "]");
+                        else
+                            Console.Write("[" + "  " + "]");
+                    }
                 }
                 Console.WriteLine();
             }
 
-            Map.test_case_joueur(pos_x, pos_y);
+            test_case_joueur(joueur_x, joueur_y);
         }
 
-        public string GetDescription(int x, int y) //retourne la description de la case
-        {
-            string s = La_map[x, y].Description;
-            return s;
-        }
+        
+
+        
     }
 }
