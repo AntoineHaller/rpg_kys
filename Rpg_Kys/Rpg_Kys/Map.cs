@@ -18,32 +18,6 @@ namespace Rpg_Kys
         {
         }
 
-        public void position_joueur()
-        {
-
-        }
-
-        public void test_case_joueur(int j, int i)
-        {
-            if (j == 0 && i == 0)
-                La_map[i, j] = new Case(Case.CaseType.start, "Vous êtes en bas de votre immeuble, rien ne se passe.");
-            if (j == 1 && i == 0)
-                La_map[i, j] = new Case(Case.CaseType.Rencontre, "Vous croisez un de vos collegues, il ne semble pas vouloir vous laisser passer.");
-            if (j == 2 && i == 0)
-                La_map[i, j] = new Case(Case.CaseType.Loot, "En fouillant bien autour de vous, vous trouvez un objet intéressant.");
-            if (j == 3 && i == 0)
-                La_map[i, j] = new Case(Case.CaseType.Enigme, "Un post-it vous attend. Quelques lignes sont inscrites dessus. Vous vous sentez obligé d'y répondre.");
-            if (j == 0 && i == 1)
-                La_map[i, j] = new Case(Case.CaseType.Fotocopieuse, "Vous tombez nez à nez à une FOTOcopieuse. Pas le choix. Elle sent votre peur. Vous devez attendre qu'elle se rendorme.");
-            if (j == 1 && i == 1)
-                La_map[i, j] = new Case(Case.CaseType.Pdg, "Vous y êtes enfin. L'antre du boss final est devant vous.");
-            if (j == 2 && i == 1)
-                La_map[i, j] = new Case(Case.CaseType.Rencontre, "Vous croisez un de vos collegues, il ne semble pas vouloir vous laisser passer.");
-            if (j == 3 && i == 1)
-                La_map[i, j] = new Case(Case.CaseType.Rencontre, "Vous êtes en bas de votre immeuble, rien ne se passe.");
-        }
-
-
         public void Print_Map(Player p)
         {
             Console.WriteLine("\n Voici la map, à vous de vous déplacer");
@@ -61,12 +35,22 @@ namespace Rpg_Kys
                 }
                 Console.WriteLine();
             }
-
-            test_case_joueur(joueur_x, joueur_y);
+            if (p.y == 0 && p.x == 0)
+                La_map[p.x, p.y] = new Case(Case.CaseType.start, "Vous êtes en bas de votre immeuble, rien ne se passe.");
+            if (p.y == 0 && p.x == 1)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre, "Vous croisez un de vos collegues, il ne semble pas vouloir vous laisser passer.");
+            if (p.y == 0 && p.x == 2)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Loot, "En fouillant bien autour de vous, vous trouvez un objet intéressant.");
+            if (p.y == 0 && p.x == 3)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Enigme, "Un post-it vous attend. Quelques lignes sont inscrites dessus. Vous vous sentez obligé d'y répondre.");
+            if (p.y == 1 && p.x == 0)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Fotocopieuse, "Vous tombez nez à nez à une FOTOcopieuse. Pas le choix. Elle sent votre peur. Vous devez attendre qu'elle se rendorme.");
+            if (p.y == 1 && p.x == 1)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Pdg, "Vous y êtes enfin. L'antre du boss final est devant vous.");
+            if (p.y == 1 && p.x == 2)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre, "Vous croisez un de vos collegues, il ne semble pas vouloir vous laisser passer.");
+            if (p.y == 1 && p.x == 3)
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre, "Vous êtes en bas de votre immeuble, rien ne se passe.");
         }
-
-        
-
-        
     }
 }
