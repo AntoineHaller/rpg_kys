@@ -9,7 +9,7 @@ namespace Rpg_Kys
     class Game
     {
         public Player p;
-        public Map plateau;
+        public Map m;
 
         public Game()
         {
@@ -49,7 +49,7 @@ namespace Rpg_Kys
                     Console.WriteLine("C'est le moment de commencer cette avanture!");
                     System.Threading.Thread.Sleep(2000);
                     p = stagiaire1;
-                    Map m = new Map();
+                    m = new Map();
                     m.Print_Map();
                     break;
                 case 2:
@@ -61,8 +61,8 @@ namespace Rpg_Kys
                     Console.WriteLine("C'est le moment de commencer cette avanture!");
                     System.Threading.Thread.Sleep(2000);
                     p = rh1;
-                    Map m2 = new Map();
-                    m2.Print_Map();
+                    m = new Map();
+                    m.Print_Map();
                     break;
                 case 3:
                     Receptionniste receptionniste1 = new Receptionniste(nom_personnage);
@@ -73,8 +73,8 @@ namespace Rpg_Kys
                     Console.WriteLine("C'est le moment de commencer cette avanture!");
                     System.Threading.Thread.Sleep(2000);
                     p = receptionniste1;
-                    Map m3 = new Map();
-                    m3.Print_Map();
+                    m = new Map();
+                    m.Print_Map();
                     break;
                 case 4:
                     LE_DEV le_dev1 = new LE_DEV(nom_personnage);
@@ -85,8 +85,8 @@ namespace Rpg_Kys
                     System.Threading.Thread.Sleep(4000);
                     Console.WriteLine("C'est le moment de commencer cette avanture!");
                     System.Threading.Thread.Sleep(2000);
-                    Map m4 = new Map();
-                    m4.Print_Map();
+                    m = new Map();
+                    m.Print_Map();
                     p = le_dev1;
                     break;
                 case 5:
@@ -96,13 +96,11 @@ namespace Rpg_Kys
                     System.Threading.Thread.Sleep(4000);
                     Console.WriteLine("C'est le moment de commencer cette avanture!");
                     System.Threading.Thread.Sleep(2000);
-                    Map m5 = new Map();
-                    m5.Print_Map();
+                    m = new Map();
+                    m.Print_Map();
                     p = comptable1;
                     break;
-            }
-
-            
+            }   
         }
 
         public void Deplacement()
