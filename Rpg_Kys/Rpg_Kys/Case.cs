@@ -73,10 +73,19 @@ namespace Rpg_Kys
                     Console.WriteLine(enemy.Name + " vous approche");
                     while(enemy.Hp>0 && Game.p.Hp >0)
                     {
-                        Console.WriteLine(enemy.Hp);
+                        //Console.WriteLine(enemy.Hp);
+                        //Console.WriteLine("Vous infligez " + Game.p.Attack() + " dégâts");
                         enemy.Hp -= Game.p.Attack();
+                        Game.p.Hp -= enemy.Attack();
+                        Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
                     }
-                    Console.WriteLine("Vous avez vaincu");
+                    if (enemy.Hp <= 0)
+                        Console.WriteLine("Vous êtes victorieux! Il vous reste " + Game.p.Hp +" points de vie. Vous pouvez continuer à avancer");
+                    else
+                    {
+                        Console.WriteLine("Vous êtes mort.");
+                    }
+                        
 
                 }
                 if (r4.Next() % 100 >= 50 && r.Next() % 100 < 80)
