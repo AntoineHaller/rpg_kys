@@ -74,23 +74,23 @@ namespace Rpg_Kys
                 if (r4.Next() % 100 >= 80)
                 {
                     ColleagueMedium enemy = new ColleagueMedium("Jozyane Balavoine");
-                    Console.WriteLine("Medium00");
+                    Console.WriteLine(enemy.Name);
                 }
                 if (r4.Next() % 100 >= 50 && r.Next() % 100 < 80)
                 {
                     ColleagueFast enemy = new ColleagueFast("Frédéric l'accro du sport");
-                    Console.WriteLine("Fast00");
+                    Console.WriteLine(enemy.Name);
                 }
                 if (r4.Next() % 100 > 100 && r.Next() % 100 < 50)
                 {
                     ColleagueWeak enemy = new ColleagueWeak("Thomas N. la t");
-                    Console.WriteLine("Weak00");
+                    Console.WriteLine(enemy.Name);
                 }
 
                 if (r4.Next() % 100 <= 10)
                 {
-                    ColleagueStrong enemy = new ColleagueStrong("Manager enervé");
-                    Console.WriteLine("Strong00");
+                    ColleagueStrong enemy = new ColleagueStrong("Le Manager enervé");
+                    Console.WriteLine(enemy.Name);
                 }
             }
 
