@@ -10,7 +10,7 @@ namespace Rpg_Kys
     class Menu //TODO Faire une fonction startmenu() ?
     {
 
-        public static void PrintMenu()
+        public void PrintMenu()
         {
             Console.WriteLine("\n\n");
             Console.WriteLine("                      /$$   /$$       /$$     /$$        /$$$$$$ ");
@@ -64,10 +64,11 @@ namespace Rpg_Kys
             return result;
         }
 
-        public static void StartGame()
+        public void StartGame()
         {
             Console.WriteLine("La partie commence!");
-            Game.Choix_Perso();
+            Game g = new Game();
+            g.Choix_Perso();
         }
 
         public static void Load()
@@ -82,7 +83,6 @@ namespace Rpg_Kys
             Console.WriteLine("Il represente l'accomplissement d'une vie entière de durs labeurs");
             Console.WriteLine("Souscrivez à un abonnement!");
             Thread.Sleep(3000);
-            PrintMenu();
         }
 
         public static void Quit()
