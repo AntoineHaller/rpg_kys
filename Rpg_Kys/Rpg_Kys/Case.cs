@@ -181,7 +181,7 @@ namespace Rpg_Kys
             switch (Console.ReadKey().Key)
             {
                 case ConsoleKey.S:
-                    if (p.y < 1)
+                    if (p.y < 5)
                     {
                         p.y++;
                         Console.WriteLine("\n\nEn bas!");
