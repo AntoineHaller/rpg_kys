@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rpg_Kys
 {
-    class Menu //TODO Faire une fonction startmenu() ?
+    class Menu
     {
 
         public void PrintMenu()
@@ -53,11 +53,9 @@ namespace Rpg_Kys
 
         public static int AskChoice(int min, int max)
         {
-            //int result = Console.ReadLine()[0];
-
             int result = int.Parse(Console.ReadLine());
 
-            while (result > max && result < min) //&& ou || ?
+            while (result > max && result < min)
             {
                 result = int.Parse(Console.ReadLine());
             }
