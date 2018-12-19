@@ -11,8 +11,8 @@ namespace Rpg_Kys
         public int joueur_x;
         public int joueur_y;
         public int x = 4;
-        public int y = 2;
-        public Case[,] La_map = new Case[4, 2];
+        public int y = 6;
+        public Case[,] La_map = new Case[4, 6];
     
         public Map()
         {
@@ -26,7 +26,7 @@ namespace Rpg_Kys
             {
                 for (int e = 0; e < x; e++)
                 {
-                    if (p.y <= 1 && p.y >= 0 && p.x >= 0 && p.x <= 3) { 
+                    if (p.y <= 5 && p.y >= 0 && p.x >= 0 && p.x <= 5) { 
                         if (i == p.y && e == p.x)
                             Console.Write("[" + "la" + "]");
                         else
@@ -37,18 +37,25 @@ namespace Rpg_Kys
             }
             if (p.y == 0 && p.x == 0)
                 La_map[p.x, p.y] = new Case(Case.CaseType.start);
+
             if (p.y == 0 && p.x == 1)
                 La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
+
             if (p.y == 0 && p.x == 2)
                 La_map[p.x, p.y] = new Case(Case.CaseType.Loot);
+
             if (p.y == 0 && p.x == 3)
                 La_map[p.x, p.y] = new Case(Case.CaseType.Enigme);
+
             if (p.y == 1 && p.x == 0)
                 La_map[p.x, p.y] = new Case(Case.CaseType.start);
+
             if (p.y == 1 && p.x == 1)
                 La_map[p.x, p.y] = new Case(Case.CaseType.Pdg);
+
             if (p.y == 1 && p.x == 2)
-                La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
+                La_map[p.x, p.y] = new Case(Case.CaseType.Rien);
+
             if (p.y == 1 && p.x == 3)
                 La_map[p.x, p.y] = new Case(Case.CaseType.Rencontre);
         }
