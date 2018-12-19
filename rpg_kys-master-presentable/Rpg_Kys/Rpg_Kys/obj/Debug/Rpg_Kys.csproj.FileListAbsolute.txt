@@ -1,0 +1,9 @@
+C:\Users\antoi\Desktop\B2\c#\Cours Ingesup C#\Rpg_Kys\Rpg_Kys\obj\Debug\Rpg_Kys.csprojAssemblyReference.cache
+C:\Users\antoi\Desktop\B2\c#\Cours Ingesup C#\Rpg_Kys\Rpg_Kys\obj\Debug\Rpg_Kys.csproj.CoreCompileInputs.cache
+C:\Users\Lemanuel\Desktop\Projet\rpg_kys-master-presentable\Rpg_Kys\Rpg_Kys\obj\Debug\Rpg_Kys.csprojAssemblyReference.cache
+C:\Users\Lemanuel\Desktop\Projet\rpg_kys-master-presentable\Rpg_Kys\Rpg_Kys\obj\Debug\Rpg_Kys.csproj.CoreCompileInputs.cache
+C:\Users\Lemanuel\Desktop\Projet\rpg_kys-master-presentable\Rpg_Kys\Rpg_Kys\bin\Debug\Rpg_Kys.exe.config
+C:\Users\Lemanuel\Desktop\Projet\rpg_kys-master-presentable\Rpg_Kys\Rpg_Kys\bin\Debug\Rpg_Kys.exe
+C:\Users\Lemanuel\Desktop\Projet\rpg_kys-master-presentable\Rpg_Kys\Rpg_Kys\bin\Debug\Rpg_Kys.pdb
+C:\Users\Lemanuel\Desktop\Projet\rpg_kys-master-presentable\Rpg_Kys\Rpg_Kys\obj\Debug\Rpg_Kys.exe
+C:\Users\Lemanuel\Desktop\Projet\rpg_kys-master-presentable\Rpg_Kys\Rpg_Kys\obj\Debug\Rpg_Kys.pdb
