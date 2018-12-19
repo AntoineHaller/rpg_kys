@@ -8,7 +8,7 @@ namespace Rpg_Kys
 {
     class Game
     {
-        public Player p;
+        public static Player p;
         public Map m;
 
         public Game()
@@ -51,15 +51,13 @@ namespace Rpg_Kys
                     p = stagiaire1;
                     m = new Map();
                     m.Print_Map(p);
-                    while (true) //TODO à retirer et mettre proprement
+                    while (true)
                     {
                         Case.Move_player(p);
                         m.Print_Map(p);
                     }
-                    
-
-
                     break;
+
                 case 2:
                     RH rh1 = new RH(nom_personnage);
                     Console.WriteLine(nom_personnage + " le RH");
@@ -71,6 +69,11 @@ namespace Rpg_Kys
                     p = rh1;
                     m = new Map();
                     m.Print_Map(p);
+                    while (true)
+                    {
+                        Case.Move_player(p);
+                        m.Print_Map(p);
+                    }
                     break;
                 case 3:
                     Receptionniste receptionniste1 = new Receptionniste(nom_personnage);
@@ -83,6 +86,11 @@ namespace Rpg_Kys
                     p = receptionniste1;
                     m = new Map();
                     m.Print_Map(p);
+                    while (true)
+                    {
+                        Case.Move_player(p);
+                        m.Print_Map(p);
+                    }
                     break;
                 case 4:
                     LE_DEV le_dev1 = new LE_DEV(nom_personnage);
@@ -93,9 +101,14 @@ namespace Rpg_Kys
                     System.Threading.Thread.Sleep(4000);
                     Console.WriteLine("C'est le moment de commencer cette avanture!");
                     System.Threading.Thread.Sleep(2000);
+                    p = le_dev1;
                     m = new Map();
                     m.Print_Map(p);
-                    p = le_dev1;
+                    while (true)
+                    {
+                        Case.Move_player(p);
+                        m.Print_Map(p);
+                    }
                     break;
                 case 5:
                     Comptable comptable1 = new Comptable(nom_personnage);
@@ -104,42 +117,16 @@ namespace Rpg_Kys
                     System.Threading.Thread.Sleep(4000);
                     Console.WriteLine("C'est le moment de commencer cette avanture!");
                     System.Threading.Thread.Sleep(2000);
+                    p = comptable1;
                     m = new Map();
                     m.Print_Map(p);
-                    p = comptable1;
+                    while (true)
+                    {
+                        Case.Move_player(p);
+                        m.Print_Map(p);
+                    }
                     break;
             }   
-        }
-
-        public void Deplacement()
-        {
-            //PrintChoix(); //TODO Faire la fonction Printchoix 
-            int choix = Menu.AskChoice(0, 4);
-            //TODO Recuperer la case
-            //TODO test le contenu de la case
-            //TODO lancer un combat ? ou...
-        }
-
-        public static void Combat()
-        {
-            while(true){
-
-                Console.WriteLine("C'est le moment de se battre!");
-
-                /*if (p.Test_Vitesse(p,5) = true)
-                {
-                    Console.WriteLine("Ohhh... Quel vitesse! A vous de choisir une attaque!");
-
-                    //appeler la fonction attack() dans character 
-                    
-                    //et damage()
-                }
-                else
-                {
-                    Console.WriteLine("L'adversaire commence car il a été plus rapide!");
-                    
-                }*/
-            }
         }
     }
 }
