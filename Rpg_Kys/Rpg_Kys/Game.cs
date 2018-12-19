@@ -45,12 +45,20 @@ namespace Rpg_Kys
                     Console.WriteLine("Très bon choix!"); 
                     Console.WriteLine("Il porte des cartons et de court toute la journée pour amener des cafés"); 
                     Console.WriteLine("Sa force et sa vitesse vous satisferont");
-                    System.Threading.Thread.Sleep(4000);
+                    System.Threading.Thread.Sleep(400);
                     Console.WriteLine("C'est le moment de commencer cette avanture!");
-                    System.Threading.Thread.Sleep(2000);
+                    System.Threading.Thread.Sleep(200);
                     p = stagiaire1;
                     m = new Map();
-                    m.Print_Map();
+                    m.Print_Map(p);
+                    while (true) //TODO à retirer et mettre proprement
+                    {
+                        Case.Move_player(p);
+                        m.Print_Map(p);
+                    }
+                    
+
+
                     break;
                 case 2:
                     RH rh1 = new RH(nom_personnage);
@@ -62,7 +70,7 @@ namespace Rpg_Kys
                     System.Threading.Thread.Sleep(2000);
                     p = rh1;
                     m = new Map();
-                    m.Print_Map();
+                    m.Print_Map(p);
                     break;
                 case 3:
                     Receptionniste receptionniste1 = new Receptionniste(nom_personnage);
@@ -74,7 +82,7 @@ namespace Rpg_Kys
                     System.Threading.Thread.Sleep(2000);
                     p = receptionniste1;
                     m = new Map();
-                    m.Print_Map();
+                    m.Print_Map(p);
                     break;
                 case 4:
                     LE_DEV le_dev1 = new LE_DEV(nom_personnage);
@@ -86,7 +94,7 @@ namespace Rpg_Kys
                     Console.WriteLine("C'est le moment de commencer cette avanture!");
                     System.Threading.Thread.Sleep(2000);
                     m = new Map();
-                    m.Print_Map();
+                    m.Print_Map(p);
                     p = le_dev1;
                     break;
                 case 5:
@@ -97,7 +105,7 @@ namespace Rpg_Kys
                     Console.WriteLine("C'est le moment de commencer cette avanture!");
                     System.Threading.Thread.Sleep(2000);
                     m = new Map();
-                    m.Print_Map();
+                    m.Print_Map(p);
                     p = comptable1;
                     break;
             }   
@@ -118,20 +126,19 @@ namespace Rpg_Kys
 
                 Console.WriteLine("C'est le moment de se battre!");
 
-                if (true)
+                /*if (p.Test_Vitesse(p,5) = true)
                 {
                     Console.WriteLine("Ohhh... Quel vitesse! A vous de choisir une attaque!");
 
                     //appeler la fonction attack() dans character 
-                    LE_DEV.Attack_Player_DEV();
-                    //et damage()
                     
+                    //et damage()
                 }
                 else
                 {
                     Console.WriteLine("L'adversaire commence car il a été plus rapide!");
                     
-                }
+                }*/
             }
         }
     }
