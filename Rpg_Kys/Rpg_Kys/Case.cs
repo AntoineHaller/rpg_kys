@@ -66,7 +66,7 @@ namespace Rpg_Kys
 
             if (Type == CaseType.Rencontre)
             {
-                Console.WriteLine("En fouillant bien autour de vous, vous trouvez un objet intéressant.");
+                Console.WriteLine("C'EST UNE RENCONTRE MDRRRRRRRRRRRRR");
                 Console.WriteLine("Rencontre");
                 if (r.Next() % 100 >= 80)
                 {
