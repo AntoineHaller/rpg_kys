@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+
 
 namespace Rpg_Kys
 {
@@ -68,20 +65,26 @@ namespace Rpg_Kys
             if (Type == CaseType.Rencontre)
             {
                 Random r4 = new Random(DateTime.Now.Millisecond);
-                Console.WriteLine("C'EST LA CASE RENCONTRE");
                 Thread.Sleep(small);
-                Console.WriteLine("Rencontre");
-                if (r4.Next() % 100 >= 80)
+                Console.WriteLine("Case Rencontre");
+                if (r4.Next() % 100 >= 0)
                 {
                     ColleagueMedium enemy = new ColleagueMedium("Jozyane Balavoine");
-                    Console.WriteLine(enemy.Name);
+                    Console.WriteLine(enemy.Name + " vous approche");
+                    while(enemy.Hp>0 && Game.p.Hp >0)
+                    {
+                        Console.WriteLine(enemy.Hp);
+                        enemy.Hp -= Game.p.Attack();
+                    }
+                    Console.WriteLine("Vous avez vaincu");
+
                 }
                 if (r4.Next() % 100 >= 50 && r.Next() % 100 < 80)
                 {
                     ColleagueFast enemy = new ColleagueFast("Frédéric l'accro du sport");
                     Console.WriteLine(enemy.Name);
                 }
-                if (r4.Next() % 100 > 100 && r.Next() % 100 < 50)
+                if (r4.Next() % 100 > 10 && r.Next() % 100 < 50)
                 {
                     ColleagueWeak enemy = new ColleagueWeak("Thomas N. la t");
                     Console.WriteLine(enemy.Name);
