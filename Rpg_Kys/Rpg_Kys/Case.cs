@@ -70,11 +70,11 @@ namespace Rpg_Kys
                 if (r4.Next() % 100 >= 0)
                 {
                     ColleagueMedium enemy = new ColleagueMedium("Jozyane Balavoine");
-                    Console.WriteLine(enemy.Name + " vous approche");
+                    Console.WriteLine(enemy.Name + " vous approche. Elle vous a toujours effrayé!");
                     while(enemy.Hp>0 && Game.p.Hp >0)
                     {
-                        //Console.WriteLine(enemy.Hp);
-                        //Console.WriteLine("Vous infligez " + Game.p.Attack() + " dégâts");
+                        Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
+                        Console.WriteLine("Vous en avez " + Game.p.Hp);
                         enemy.Hp -= Game.p.Attack();
                         Game.p.Hp -= enemy.Attack();
                         Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
@@ -84,6 +84,8 @@ namespace Rpg_Kys
                     else
                     {
                         Console.WriteLine("Vous êtes mort.");
+                        Thread.Sleep(Sleep*2);
+                        Environment.Exit(0);
                     }
                         
 
@@ -92,17 +94,65 @@ namespace Rpg_Kys
                 {
                     ColleagueFast enemy = new ColleagueFast("Frédéric l'accro du sport");
                     Console.WriteLine(enemy.Name);
+                    while (enemy.Hp > 0 && Game.p.Hp > 0)
+                    {
+                        Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
+                        Console.WriteLine("Vous en avez " + Game.p.Hp);
+                        enemy.Hp -= Game.p.Attack();
+                        Game.p.Hp -= enemy.Attack();
+                        Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                    }
+                    if (enemy.Hp <= 0)
+                        Console.WriteLine("Vous êtes victorieux! Il vous reste " + Game.p.Hp + " points de vie. Vous pouvez continuer à avancer");
+                    else
+                    {
+                        Console.WriteLine("Vous êtes mort.");
+                        Thread.Sleep(Sleep * 2);
+                        Environment.Exit(0);
+                    }
                 }
                 if (r4.Next() % 100 > 10 && r.Next() % 100 < 50)
                 {
                     ColleagueWeak enemy = new ColleagueWeak("Thomas N. la t");
                     Console.WriteLine(enemy.Name);
+                    while (enemy.Hp > 0 && Game.p.Hp > 0)
+                    {
+                        Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
+                        Console.WriteLine("Vous en avez " + Game.p.Hp);
+                        enemy.Hp -= Game.p.Attack();
+                        Game.p.Hp -= enemy.Attack();
+                        Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                    }
+                    if (enemy.Hp <= 0)
+                        Console.WriteLine("Vous êtes victorieux! Il vous reste " + Game.p.Hp + " points de vie. Vous pouvez continuer à avancer");
+                    else
+                    {
+                        Console.WriteLine("Vous êtes mort.");
+                        Thread.Sleep(Sleep * 2);
+                        Environment.Exit(0);
+                    }
                 }
 
                 if (r4.Next() % 100 <= 10)
                 {
                     ColleagueStrong enemy = new ColleagueStrong("Le Manager enervé");
                     Console.WriteLine(enemy.Name);
+                    while (enemy.Hp > 0 && Game.p.Hp > 0)
+                    {
+                        Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
+                        Console.WriteLine("Vous en avez " + Game.p.Hp);
+                        enemy.Hp -= Game.p.Attack();
+                        Game.p.Hp -= enemy.Attack();
+                        Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                    }
+                    if (enemy.Hp <= 0)
+                        Console.WriteLine("Vous êtes victorieux! Il vous reste " + Game.p.Hp + " points de vie. Vous pouvez continuer à avancer");
+                    else
+                    {
+                        Console.WriteLine("Vous êtes mort.");
+                        Thread.Sleep(Sleep * 2);
+                        Environment.Exit(0);
+                    }
                 }
             }
 
