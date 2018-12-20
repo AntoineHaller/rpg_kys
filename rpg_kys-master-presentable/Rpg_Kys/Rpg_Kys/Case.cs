@@ -23,7 +23,7 @@ namespace Rpg_Kys
             {
                 Console.WriteLine("\n\nVous êtes en bas de votre immeuble, c'est le début.\nLe début de votre épopée formidable.\nElle sera contée aux générations futures cherchant à s'extirper du joug du capitalisme ravageur!\n Ou pas d'ailleurs.");
                 Thread.Sleep(small);
-                Console.WriteLine("A vous de vous déplacer dans ces couloirs sans fin dont bizarrement vous n'avez pas le moindre souvenir!");
+                Console.WriteLine("A vous de vous déplacer dans ces couloirs sans fin dont bizarrement vous n'avez pas le moindre souvenir! En utilisant ZQSD.");
 
             }
 
@@ -65,16 +65,23 @@ namespace Rpg_Kys
                 Console.WriteLine("Mais vous n'êtes pas la pour ça! NON JOSE! NOUS NE SOMMES PAS LA POUR CELA. Ta tyrannie prend fin ici et MAINTENANT! \n tutututTUTUTUtututu *Musique de combat épique*");
                 while (Boss.Hp > 0 && Game.p.Hp > 0)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine(Boss.Name + " a " + Boss.Hp + " points de vie");
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Vous en avez " + Game.p.Hp);
+                    Console.ForegroundColor = ConsoleColor.White;
                     Boss.Hp -= Game.p.Attack();
                     Game.p.Hp -= Boss.Attack();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Vous perdez " + Boss.Attack() + " points de vie");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
                 if (Boss.Hp <= 0)
                 {
                     Console.WriteLine("Vous êtes victorieux!");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Félicitations, vous êtes tout de même mort");
+                    Console.ForegroundColor = ConsoleColor.White;
                     Thread.Sleep(Sleep * 2);
                     m.PrintMenu();
                 }
@@ -97,13 +104,18 @@ namespace Rpg_Kys
                     Console.WriteLine(enemy.Name + " vous approche. Elle vous a toujours effrayé!\n");
                     while(enemy.Hp>0 && Game.p.Hp >0)
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Vous en avez " + Game.p.Hp);
+                        Console.ForegroundColor = ConsoleColor.White;
 
-                        if(enemy.Test_Vitesse()>Game.p.Test_Vitesse())
+                        if (enemy.Test_Vitesse()>Game.p.Test_Vitesse())
                         {
                             Game.p.Hp -= enemy.Attack();
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\n\nVous perdez " + enemy.Attack() + " points de vie");
+                            Console.ForegroundColor = ConsoleColor.White;
 
                             if (Game.p.Hp > 0)
                             {
@@ -118,7 +130,9 @@ namespace Rpg_Kys
                             if (enemy.Hp > 0)
                             {
                                 Game.p.Hp -= enemy.Attack();
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                                Console.ForegroundColor = ConsoleColor.White;
                             }
                         }
 
@@ -140,12 +154,17 @@ namespace Rpg_Kys
                     Console.WriteLine(enemy.Name + " court vers vous. Il n'est pas aussi musclé qu'il le pense mais son cardio est à toute épreuve!");
                     while (enemy.Hp > 0 && Game.p.Hp > 0)
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Vous en avez " + Game.p.Hp);
+                        Console.ForegroundColor = ConsoleColor.White;
                         if (enemy.Test_Vitesse() > Game.p.Test_Vitesse())
                         {
                             Game.p.Hp -= enemy.Attack();
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\n\nVous perdez " + enemy.Attack() + " points de vie");
+                            Console.ForegroundColor = ConsoleColor.White;
 
                             if (Game.p.Hp > 0)
                             {
@@ -160,7 +179,9 @@ namespace Rpg_Kys
                             if (enemy.Hp > 0)
                             {
                                 Game.p.Hp -= enemy.Attack();
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                                Console.ForegroundColor = ConsoleColor.White;
                             }
                         }
                     }
@@ -179,12 +200,17 @@ namespace Rpg_Kys
                     Console.WriteLine(enemy.Name + " est là. Vous le méprisez du plus profond de votre être. Il ne vaut RIEN!");
                     while (enemy.Hp > 0 && Game.p.Hp > 0)
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Vous en avez " + Game.p.Hp);
+                        Console.ForegroundColor = ConsoleColor.White;
                         if (enemy.Test_Vitesse() > Game.p.Test_Vitesse())
                         {
                             Game.p.Hp -= enemy.Attack();
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\n\nVous perdez " + enemy.Attack() + " points de vie");
+                            Console.ForegroundColor = ConsoleColor.White;
 
                             if (Game.p.Hp > 0)
                             {
@@ -199,7 +225,9 @@ namespace Rpg_Kys
                             if (enemy.Hp > 0)
                             {
                                 Game.p.Hp -= enemy.Attack();
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                                Console.ForegroundColor = ConsoleColor.White;
                             }
                         }
                     }
@@ -219,12 +247,17 @@ namespace Rpg_Kys
                     Console.WriteLine(enemy.Name + " vous regarde. Il a l'air de vouloir en découdre.");
                     while (enemy.Hp > 0 && Game.p.Hp > 0)
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Vous en avez " + Game.p.Hp);
+                        Console.ForegroundColor = ConsoleColor.White;
                         if (enemy.Test_Vitesse() > Game.p.Test_Vitesse())
                         {
                             Game.p.Hp -= enemy.Attack();
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\n\nVous perdez " + enemy.Attack() + " points de vie");
+                            Console.ForegroundColor = ConsoleColor.White;
 
                             if (Game.p.Hp > 0)
                             {
@@ -239,7 +272,9 @@ namespace Rpg_Kys
                             if (enemy.Hp > 0)
                             {
                                 Game.p.Hp -= enemy.Attack();
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                                Console.ForegroundColor = ConsoleColor.White;
                             }
                         }
                     }
@@ -258,7 +293,7 @@ namespace Rpg_Kys
             if (r.Next() % 100 >= 10 && Type == CaseType.Loot)
             {
                 Thread.Sleep(small);
-                Console.WriteLine("\n\nEn fouillant bien autour de vous, vous trouvez un objet intéressant.");
+                Console.WriteLine("\n\nEn fouillant bien autour de vous, vous trouvez un objet intéressant. \n LES OBJETS NE FONCTIONNENT PAS ENCORE");
                 Random r2 = new Random(DateTime.Now.Millisecond);
 
                 if (r2.Next() % 100 >= 90)
@@ -338,6 +373,9 @@ namespace Rpg_Kys
                     Console.WriteLine("Essaie encore, ce n'est pourtant pas compliqué!");
                     reponse = Console.ReadLine();
                 }
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Bravo! Vous pouvez continuer à vous déplacer!");
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
