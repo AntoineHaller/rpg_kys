@@ -27,6 +27,11 @@ namespace Rpg_Kys
             return 2;
         }
 
+        public virtual int Test_Vitesse()
+        {
+            return Vitesse;
+        }
+
         #region Les tests nuls
         public virtual int Damage()
         {

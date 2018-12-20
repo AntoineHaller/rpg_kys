@@ -137,9 +137,6 @@ namespace Rpg_Kys
                 case ConsoleKey.D:
                     Console.WriteLine("A Droite!");
                     break;
-                case ConsoleKey.R:
-                    Vos_stats();
-                    break;
                 default:
                     Console.WriteLine("ERREUR! Mauvaise touche!");
                     break;

@@ -21,7 +21,7 @@ namespace Rpg_Kys
 
             if (Type == CaseType.start)
             {
-                Console.WriteLine("Vous êtes en bas de votre immeuble, c'est le début.\nLe début de votre épopée formidable.\nElle sera contée aux générations futures cherchant à s'extirper du joug du capitalisme ravageur!\n Ou pas d'ailleurs.");
+                Console.WriteLine("\n\nVous êtes en bas de votre immeuble, c'est le début.\nLe début de votre épopée formidable.\nElle sera contée aux générations futures cherchant à s'extirper du joug du capitalisme ravageur!\n Ou pas d'ailleurs.");
                 Thread.Sleep(small);
                 Console.WriteLine("A vous de vous déplacer dans ces couloirs sans fin dont bizarrement vous n'avez pas le moindre souvenir!");
 
@@ -36,7 +36,7 @@ namespace Rpg_Kys
             if (Type == CaseType.Fotocopieuse)
             {
                 Thread.Sleep(small);
-                Console.WriteLine("Vous tombez nez à nez à une FOTOcopieuse. Pas le choix. Elle sent votre peur. Vous devez attendre qu'elle se rendorme.");
+                Console.WriteLine("\n\nVous tombez nez à nez à une FOTOcopieuse. Pas le choix. Elle sent votre peur. Vous devez attendre qu'elle se rendorme.");
                 Console.WriteLine("Une page a été imprimé");
                 Thread.Sleep(Sleep);
                 Console.WriteLine("ZzzzZ");
@@ -59,7 +59,7 @@ namespace Rpg_Kys
             if (Type == CaseType.Pdg)
             {
                 Thread.Sleep(small);
-                Console.WriteLine("Vous y êtes enfin. L'antre du boss final est devant vous.");
+                Console.WriteLine("\n\nVous y êtes enfin. L'antre du boss final est devant vous.");
                 PDG Boss = new PDG("José");
                 Console.WriteLine(Boss.Name + " est confortablement installé derrière son bureau.\nIl se lève. Vous toise et vous ordonne de repartir travailler.");
                 Console.WriteLine("Mais vous n'êtes pas la pour ça! NON JOSE! NOUS NE SOMMES PAS LA POUR CELA. Ta tyrannie prend fin ici et MAINTENANT! \n tutututTUTUTUtututu *Musique de combat épique*");
@@ -90,21 +90,42 @@ namespace Rpg_Kys
             {
                 Random r4 = new Random(DateTime.Now.Millisecond);
                 Thread.Sleep(small);
-                Console.WriteLine("Case Rencontre");
+                Console.WriteLine("\n\nCase Rencontre\n");
                 if (r4.Next() % 100 >= 80)
                 {
                     ColleagueMedium enemy = new ColleagueMedium("Jozyane Balavoine");
-                    Console.WriteLine(enemy.Name + " vous approche. Elle vous a toujours effrayé!");
+                    Console.WriteLine(enemy.Name + " vous approche. Elle vous a toujours effrayé!\n");
                     while(enemy.Hp>0 && Game.p.Hp >0)
                     {
                         Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
                         Console.WriteLine("Vous en avez " + Game.p.Hp);
-                        enemy.Hp -= Game.p.Attack();
-                        Game.p.Hp -= enemy.Attack();
-                        Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+
+                        if(enemy.Test_Vitesse()>Game.p.Test_Vitesse())
+                        {
+                            Game.p.Hp -= enemy.Attack();
+                            Console.WriteLine("\n\nVous perdez " + enemy.Attack() + " points de vie");
+
+                            if (Game.p.Hp > 0)
+                            {
+                                int dégats = Game.p.Attack();
+                                enemy.Hp -= dégats;
+                                Console.WriteLine("Vous avez infligé " + dégats);
+                            }
+                        }
+                        if (enemy.Test_Vitesse() < Game.p.Test_Vitesse())
+                        {
+                            enemy.Hp -= Game.p.Attack();
+                            if (enemy.Hp > 0)
+                            {
+                                Game.p.Hp -= enemy.Attack();
+                                Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                            }
+                        }
+
+
                     }
                     if (enemy.Hp <= 0)
-                        Console.WriteLine("Vous êtes victorieux!\nJozyane repart dans son antre.\n\n Il vous reste " + Game.p.Hp +" points de vie.");
+                        Console.WriteLine("\n\nVous êtes victorieux!\nJozyane repart dans son antre.\n\n Il vous reste " + Game.p.Hp +" points de vie.");
                     else
                     {
                         Console.WriteLine("Vous êtes mort. Reset du continuum espace-temps.");
@@ -121,9 +142,27 @@ namespace Rpg_Kys
                     {
                         Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
                         Console.WriteLine("Vous en avez " + Game.p.Hp);
-                        enemy.Hp -= Game.p.Attack();
-                        Game.p.Hp -= enemy.Attack();
-                        Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                        if (enemy.Test_Vitesse() > Game.p.Test_Vitesse())
+                        {
+                            Game.p.Hp -= enemy.Attack();
+                            Console.WriteLine("\n\nVous perdez " + enemy.Attack() + " points de vie");
+
+                            if (Game.p.Hp > 0)
+                            {
+                                int dégats = Game.p.Attack();
+                                enemy.Hp -= dégats;
+                                Console.WriteLine("Vous avez infligé " + dégats);
+                            }
+                        }
+                        if (enemy.Test_Vitesse() < Game.p.Test_Vitesse())
+                        {
+                            enemy.Hp -= Game.p.Attack();
+                            if (enemy.Hp > 0)
+                            {
+                                Game.p.Hp -= enemy.Attack();
+                                Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                            }
+                        }
                     }
                     if (enemy.Hp <= 0)
                         Console.WriteLine("Vous êtes victorieux!\nIl court vers le distributeur pour s'acheter une potion energisante!\n\n Il vous reste " + Game.p.Hp + " points de vie.");
@@ -142,9 +181,27 @@ namespace Rpg_Kys
                     {
                         Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
                         Console.WriteLine("Vous en avez " + Game.p.Hp);
-                        enemy.Hp -= Game.p.Attack();
-                        Game.p.Hp -= enemy.Attack();
-                        Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                        if (enemy.Test_Vitesse() > Game.p.Test_Vitesse())
+                        {
+                            Game.p.Hp -= enemy.Attack();
+                            Console.WriteLine("\n\nVous perdez " + enemy.Attack() + " points de vie");
+
+                            if (Game.p.Hp > 0)
+                            {
+                                int dégats = Game.p.Attack();
+                                enemy.Hp -= dégats;
+                                Console.WriteLine("Vous avez infligé " + dégats);
+                            }
+                        }
+                        if (enemy.Test_Vitesse() < Game.p.Test_Vitesse())
+                        {
+                            enemy.Hp -= Game.p.Attack();
+                            if (enemy.Hp > 0)
+                            {
+                                Game.p.Hp -= enemy.Attack();
+                                Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                            }
+                        }
                     }
                     if (enemy.Hp <= 0)
                         Console.WriteLine("Vous êtes victorieux!\nIl s'incline et reconnait votre supériorité.\n\n Il vous reste " + Game.p.Hp + " points de vie.");
@@ -164,9 +221,27 @@ namespace Rpg_Kys
                     {
                         Console.WriteLine(enemy.Name + " a " + enemy.Hp + " points de vie");
                         Console.WriteLine("Vous en avez " + Game.p.Hp);
-                        enemy.Hp -= Game.p.Attack();
-                        Game.p.Hp -= enemy.Attack();
-                        Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                        if (enemy.Test_Vitesse() > Game.p.Test_Vitesse())
+                        {
+                            Game.p.Hp -= enemy.Attack();
+                            Console.WriteLine("\n\nVous perdez " + enemy.Attack() + " points de vie");
+
+                            if (Game.p.Hp > 0)
+                            {
+                                int dégats = Game.p.Attack();
+                                enemy.Hp -= dégats;
+                                Console.WriteLine("Vous avez infligé " + dégats);
+                            }
+                        }
+                        if (enemy.Test_Vitesse() < Game.p.Test_Vitesse())
+                        {
+                            enemy.Hp -= Game.p.Attack();
+                            if (enemy.Hp > 0)
+                            {
+                                Game.p.Hp -= enemy.Attack();
+                                Console.WriteLine("Vous perdez " + enemy.Attack() + " points de vie");
+                            }
+                        }
                     }
                     if (enemy.Hp <= 0)
                         Console.WriteLine("Vous êtes victorieux!\nRien à dire. C'était clean.\n\nIl vous reste " + Game.p.Hp + " points de vie.");
@@ -183,7 +258,7 @@ namespace Rpg_Kys
             if (r.Next() % 100 >= 10 && Type == CaseType.Loot)
             {
                 Thread.Sleep(small);
-                Console.WriteLine("En fouillant bien autour de vous, vous trouvez un objet intéressant.");
+                Console.WriteLine("\n\nEn fouillant bien autour de vous, vous trouvez un objet intéressant.");
                 Random r2 = new Random(DateTime.Now.Millisecond);
 
                 if (r2.Next() % 100 >= 90)
@@ -255,8 +330,8 @@ namespace Rpg_Kys
             if (Type == CaseType.Enigme)
             {
                 Thread.Sleep(small);
-                Console.WriteLine("Un post-it vous attend. Quelques lignes sont inscrites dessus. Vous vous sentez obligé d'y répondre.");
-                Console.WriteLine("\n\n De quelle couleur était le cheval Blanc d'Henry IV?                                                                                                                                                                             La réponse est rouge!");
+                Console.WriteLine("\n\nUn post-it vous attend. Quelques lignes sont inscrites dessus. Vous vous sentez obligé d'y répondre.");
+                Console.WriteLine("\n\n De quelle couleur était le cheval Blanc d'Henry IV?");
                 string reponse = Console.ReadLine();
                 while(reponse.ToLower() != "rouge")
                 {
@@ -276,7 +351,7 @@ namespace Rpg_Kys
                     {
                         p.y++;
                         Console.WriteLine("\n\nEn bas!");
-                        Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                        //Console.WriteLine("x=" + p.x + "  y=" + p.y);
                     }
                     else
                     {
@@ -288,7 +363,7 @@ namespace Rpg_Kys
                     {
                         p.y--;
                         Console.WriteLine("\n\nEn haut!");
-                        Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                       // Console.WriteLine("x=" + p.x + "  y=" + p.y);
                     }
                     else
                     {
@@ -301,7 +376,7 @@ namespace Rpg_Kys
                     {
                         p.x--;
                         Console.WriteLine("\n\nA Gauche!");
-                        Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                        //Console.WriteLine("x=" + p.x + "  y=" + p.y);
                     }
 
                     else
@@ -314,12 +389,15 @@ namespace Rpg_Kys
                     {
                         p.x++;
                         Console.WriteLine("\n\nA Droite!");
-                        Console.WriteLine("x=" + p.x + "  y=" + p.y);
+                        //Console.WriteLine("x=" + p.x + "  y=" + p.y);
                     }
                     else
                     {
                         Console.WriteLine("\n\naie aie aie aie JAI BOUFFE LE MUR");
                     }
+                    break;
+                case ConsoleKey.R:
+                    p.Vos_stats();
                     break;
                 default:
                     Console.WriteLine("\n\nERREUR! Mauvaise touche!");

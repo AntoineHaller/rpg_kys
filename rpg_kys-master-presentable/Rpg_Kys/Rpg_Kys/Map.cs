@@ -20,7 +20,7 @@ namespace Rpg_Kys
 
         public void Print_Map(Player p)
         {
-            Console.WriteLine("\n Voici la map, à vous de vous déplacer.\nPour vous déplacer, utilisez les touches ZQSD. \nOn vous laisse deviner laquelle va dans quel sens. :D\n\nLa touche R permet également de voir ses stats.");
+            Console.WriteLine("\n Voici la map, à vous de vous déplacer.\nPour vous déplacer, utilisez les touches ZQSD. \nOn vous laisse deviner laquelle va dans quel sens. :D\n\nLa touche R permet également de voir ses stats.\n\n");
 
             for (int i = 0; i < y; i++)
             {

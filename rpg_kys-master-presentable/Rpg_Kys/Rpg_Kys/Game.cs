@@ -23,10 +23,10 @@ namespace Rpg_Kys
 
         public void Choix_Perso()
         {
-            Console.WriteLine("Pour commencer il faut donner un petit nom à votre personnage: ");
+            Console.WriteLine("Pour commencer il faut donner un petit nom à votre personnage: \n\n ");
             string nom_personnage = Console.ReadLine(); //assignation du nom du personnage
-            Console.WriteLine("\nWOW c'est vraiment très original et ça sonne SUPER bien.");
-
+            Console.WriteLine("\n\nWOW c'est vraiment très original et ça sonne SUPER bien.");
+            System.Threading.Thread.Sleep(2000);
             Console.WriteLine("\n\nIl faut maintenant choisir sa classe!"); 
             Console.WriteLine("Faites le bon choix, car le déroulement de votre épopée formidable pourrait bien en dépendre.");
             Console.WriteLine("Quel valeureux guerrier vous representera ?\n");

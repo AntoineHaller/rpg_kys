@@ -26,5 +26,10 @@ namespace Rpg_Kys
         {
             return Attack_Bot_Medium();
         }
+
+        public override int Test_Vitesse()
+        {
+            return base.Test_Vitesse();
+        }
     }
 }
