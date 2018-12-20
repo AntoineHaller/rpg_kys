@@ -18,7 +18,7 @@ namespace Rpg_Kys
             Hp = 20;
             Vitesse = 12;
             Force = 16;
-            Inventaire[1] = new Weapon("bloc-note", "Un super bloc-note pour prendre des notes!", 1, Weapon.WeaponType.bloc_note, 0, 0, 1);
+            Inventaire.Add(new Weapon("bloc-note", "Un super bloc-note pour prendre des notes!", 1, Weapon.WeaponType.bloc_note, 0, 0, 1));
             Type = PlayerType.Stagiaire;
         }
 
