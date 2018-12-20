@@ -437,6 +437,9 @@ namespace Rpg_Kys
                 case ConsoleKey.R:
                     p.Vos_stats();
                     break;
+                case ConsoleKey.I:
+                    p.Votre_Inventaire();
+                    break;
                 default:
                     Console.WriteLine("\n\nERREUR! Mauvaise touche!");
                     break;

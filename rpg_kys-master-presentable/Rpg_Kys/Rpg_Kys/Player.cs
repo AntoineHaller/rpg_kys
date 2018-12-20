@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Rpg_Kys
@@ -15,14 +16,16 @@ namespace Rpg_Kys
         protected int Charisme;
         protected int Inteligence;
         //public int Points;
-        public Equipment[] Inventaire;
+        public List <Equipment> Inventaire;
         public enum PlayerType { RH, Stagiaire, LE_DEV, Receptionniste, Comptable };
         public PlayerType Type;
 
         public Player(string n) : base(n)
         {
-            Inventaire = new Equipment[5];
-            Inventaire[0] = new Potion("café", "Une potion de soin qui vous rend 5 points de vie", 2, Potion.PotionType.Heal);
+            Inventaire = new List<Equipment>();
+            Inventaire.Add(new Potion("café", "Une potion de soin qui vous rend 5 points de vie", 2, Potion.PotionType.Heal));
+            Inventaire.Add (new Potion("Plop", "Une potion de soin qui vous rend 5 points de vie", 2, Potion.PotionType.Heal));
+            Inventaire.Add (new Potion("café", "Une potion de soin qui vous rend 5 points de vie", 2, Potion.PotionType.Heal));
         }
 
         #region Les tests nuls
@@ -110,38 +113,19 @@ namespace Rpg_Kys
             Console.WriteLine("\nTaille: " + Taille);
             Console.WriteLine("\nIntelligence: " + Inteligence);
             Console.WriteLine("\nCharisme: " + Charisme);
-            //Console.WriteLine("Vos Points: " + Points);
+            Thread.Sleep(4000);
         }
 
         //Info inventaire  -  BETA
         public void Votre_Inventaire()
         {
-            Console.WriteLine("Contenu de votre inventaire: \n\n");
-            Console.WriteLine(Inventaire); //TODO je sais sa ne marche pas mais bon hein on vera demain 
-
-        }
-
-        public void Move_player()
-        {
-            switch (Console.ReadKey().Key)
+            Console.WriteLine("\n\nContenu de votre inventaire: \n\n");
+            for (int i = 0; i < Inventaire.Count; i++)
             {
-                case ConsoleKey.Z:
-                    Console.WriteLine("J'avance!");
-                    break;
-                case ConsoleKey.S:
-                    Console.WriteLine("Je recule!");
-                    break;
-                case ConsoleKey.Q:
-                    Console.WriteLine("A Gauche!");
-                    break;
-                case ConsoleKey.D:
-                    Console.WriteLine("A Droite!");
-                    break;
-                default:
-                    Console.WriteLine("ERREUR! Mauvaise touche!");
-                    break;
-
-            }
+                Console.WriteLine(Inventaire[i].Name);
+            } 
+            Thread.Sleep(4000);
         }
+
     }
 }
