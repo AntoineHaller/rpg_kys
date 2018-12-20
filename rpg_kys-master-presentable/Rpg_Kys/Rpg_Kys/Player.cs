@@ -22,11 +22,18 @@ namespace Rpg_Kys
 
         public Player(string n) : base(n)
         {
-            Inventaire = new List<Equipment>();
+            List<Equipment> list = new List<Equipment>();
+            Inventaire = list;
             Inventaire.Add(new Potion("café", "Une potion de soin qui vous rend 5 points de vie", 2, Potion.PotionType.Heal));
             Inventaire.Add (new Potion("Plop", "Une potion de soin qui vous rend 5 points de vie", 2, Potion.PotionType.Heal));
             Inventaire.Add (new Potion("café", "Une potion de soin qui vous rend 5 points de vie", 2, Potion.PotionType.Heal));
         }
+
+        public List<Equipment> GetList()
+        {
+            return Inventaire;
+        }
+
 
         #region Les tests nuls
         public override int Damage()

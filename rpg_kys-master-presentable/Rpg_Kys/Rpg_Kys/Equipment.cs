@@ -21,7 +21,11 @@ namespace Rpg_Kys
 
         public virtual void PickUp_Object()
         {
+            Player p = new Player(Name);
             Console.WriteLine("Vous rammassez: " + Name);
+            List<Equipment> Inventaire = p.GetList();
+            Inventaire.Add(this);
+            
         }
 
         public virtual void Use_Object()
