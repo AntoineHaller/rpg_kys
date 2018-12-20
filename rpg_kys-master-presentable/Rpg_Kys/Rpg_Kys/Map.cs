@@ -27,8 +27,11 @@ namespace Rpg_Kys
                 for (int e = 0; e < x; e++)
                 {
                     if (p.y <= 5 && p.y >= 0 && p.x >= 0 && p.x <= 5) { 
-                        if (i == p.y && e == p.x)
+                        if (i == p.y && e == p.x){
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.Write("[" + "la" + "]");
+                            Console.ForegroundColor = ConsoleColor.White;
+                        }
                         else
                             Console.Write("[" + "  " + "]");
                     }
